@@ -14,27 +14,18 @@
 /* globals, server,client */
 
 /**
- * @fileoverview Logged in page
+ * @fileoverview Main function that gets called when file enters
  * @author ravinder-Olivier@outlook.com (Ravinder Olivier Singh Dadiala)
  *
 */
-import { useHistory } from 'react-router'
-import { useAuth } from '../contexts/Auth'
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-export function Dashboard() {
-  const { user, signOut } = useAuth()
-  const history = useHistory()
+import { App } from './components/App'
 
-  async function handleSignOut() {
-    await signOut()
-
-    history.push('/login')
-  }
-
-  return (
-    <div>
-      <p>Welcome, {user?.id}!</p>
-      <button onClick={handleSignOut}>Sign out</button>
-    </div>
-  )
-}
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+)

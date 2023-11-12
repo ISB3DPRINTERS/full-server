@@ -1,7 +1,10 @@
 {
-  "name": "app",
+  "name": "full-server",
   "version": "0.1.0",
-  "private": true,
+  "author": "Ravinder Olivier Singh Dadiala <ravinder-Olivier@outlook.com>",
+  "description": "This is the full ISB3DPRINTERS server",
+  "license": "Apache-2.0",
+  "private": false,
   "dependencies": {
     "@supabase/supabase-js": "^1.7.7",
     "@testing-library/jest-dom": "^5.11.4",
