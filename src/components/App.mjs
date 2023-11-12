@@ -14,27 +14,30 @@
 /* globals, server,client */
 
 /**
- * @fileoverview Logged in page
+ * @fileoverview Router File
  * @author ravinder-Olivier@outlook.com (Ravinder Olivier Singh Dadiala)
  *
 */
-import { useHistory } from 'react-router'
-import { useAuth } from '../contexts/Auth'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Signup } from './Signup.mjs'
+import { Dashboard } from './Dashboard.mjs'
+import { AuthProvider } from '../contexts/Auth'
+import { Login } from './Login.mjs'
+import { PrivateRoute } from './PrivateRoute.mjs'
 
-export function Dashboard() {
-  const { user, signOut } = useAuth()
-  const history = useHistory()
-
-  async function handleSignOut() {
-    await signOut()
-
-    history.push('/login')
-  }
-
+export function App() {
   return (
     <div>
-      <p>Welcome, {user?.id}!</p>
-      <button onClick={handleSignOut}>Sign out</button>
+      <h1>ISB3DPRINTERS Teachers' Console</h1>
+      <Router>
+        <AuthProvider>
+          <Switch>
+            <PrivateRoute exact path="/" component={Dashboard} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/login" component={Login} />
+          </Switch>
+        </AuthProvider>
+      </Router>
     </div>
   )
 }
