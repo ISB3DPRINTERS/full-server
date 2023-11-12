@@ -19,7 +19,11 @@
  *
 */
 import React, { Component } from 'react';
-import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from "react-router-dom";
 import { Signup } from './Signup.js'
 import { Dashboard } from './Dashboard.js'
 import { AuthProvider } from '../contexts/Auth'
