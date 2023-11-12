@@ -25,7 +25,7 @@ import { FC } from "react";
 import * as React from 'react'
 import getinfo from "../api/getinfo"
 import { useState } from "react";
-
+import resetfunc from "../automated-server/src/main"
 
 export function Dashboard() {
   const { user, signOut } = useAuth()
@@ -42,29 +42,19 @@ export function Dashboard() {
     const [initials, setInitials] = useState("");
     const [grade, setGrade] = useState("");
 
-    const handleLogin = async (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         setLoading(true);
 
-        const res = await fetch("/api/resetpass", {
-            method: "POST",
+        let resetfuncreturn = await resetfunc(initials,grade)
+        if (resetfuncreturn == true) {
+            setLoading(false);
+        }
+        else {
+            console.log(resetfuncreturn+"resetfunc has errored")
+        }
 
-            headers: {
-                "Content-Type": "application/json",
-            },
-            
-            body: JSON.stringify({
-                initials,
-                grade,
-            }),
-        });
-
-        const token = await res.text();
-
-        localStorage.setItem("auth-token", token);
-
-        setLoading(false);
     };
 
     return (
