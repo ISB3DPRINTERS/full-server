@@ -19,7 +19,7 @@
  *
 */
 import React, { useContext, useState, useEffect } from 'react'
-import { supabase } from '../supabase.mjs'
+import { supabase } from '../supabase.js'
 
 const AuthContext = React.createContext()
 

@@ -18,12 +18,13 @@
  * @author ravinder-Olivier@outlook.com (Ravinder Olivier Singh Dadiala)
  *
 */
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Signup } from './Signup.mjs'
-import { Dashboard } from './Dashboard.mjs'
+import React, { Component } from 'react';
+import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
+import { Signup } from './Signup.js'
+import { Dashboard } from './Dashboard.js'
 import { AuthProvider } from '../contexts/Auth'
-import { Login } from './Login.mjs'
-import { PrivateRoute } from './PrivateRoute.mjs'
+import { Login } from './Login.js'
+import { PrivateRoute } from './PrivateRoute.js'
 
 export function App() {
   return (
