@@ -67,3 +67,4 @@ export function Login() {
     </>
   )
 }
+// the signup will be removed in the future

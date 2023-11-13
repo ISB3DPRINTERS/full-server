@@ -138,6 +138,7 @@ export function Dashboard() {
                         </button>
                 </form>
             </div>
+            <button onClick={handleSignOut}>Sign out</button>
         </div>
     );
 }
