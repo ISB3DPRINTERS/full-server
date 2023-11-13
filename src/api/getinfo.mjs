@@ -1,5 +1,4 @@
-import * as fs from 'fs'
-
+var Filer = require('filer');
 const getcost = (grade) => {
     // ask for cost per grade
     return ("not developed yet"+grade);

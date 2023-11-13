@@ -23,12 +23,12 @@ import { findapikeys, apipathfinder, passwordarray } from "./functions";
 import axios, { isCancel, AxiosError } from "axios";
 import axiosfunc from "./axiosfunc";
 
-export default async function therealchanger(grade:number): Promise<void> {
-  async function evenrealerchanger(grade:number, printer:number) {
+export default async function therealchanger(grade){
+  async function evenrealerchanger(grade, printer) {
     
     
     //uses axios to send put request
-    var apikeys = findapikeys(grade,printer);
+        var apikeys = findapikeys(grade,printer);
     const res = await axiosfunc
     console.log(res);
   }

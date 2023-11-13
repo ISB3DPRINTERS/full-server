@@ -25,7 +25,7 @@ import { FC } from "react";
 import * as React from 'react'
 import getinfo from "../api/getinfo"
 import { useState } from "react";
-import resetfunc from "../automated-server/src/main"
+import resetfunc from "../passchanger/main"
 
 export function Dashboard() {
   const { user, signOut } = useAuth()
@@ -48,7 +48,7 @@ export function Dashboard() {
         setLoading(true);
 
         let resetfuncreturn = await resetfunc(initials,grade)
-        if (resetfuncreturn == true) {
+        if (resetfuncreturn === true) {
             setLoading(false);
         }
         else {
@@ -109,7 +109,7 @@ export function Dashboard() {
             <br></br>
             <h2>Reset PassKeys</h2>
             <div className="auth-form-container">
-                <form className="form-widget" onSubmit={handleLogin}>
+                <form className="form-widget" onSubmit={handleSubmit}>
                     <div className="form-group">
                         <input
                             className="inputField"

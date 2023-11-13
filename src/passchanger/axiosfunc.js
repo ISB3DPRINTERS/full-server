@@ -21,7 +21,7 @@
 import { findapikeys, apipathfinder, passwordarray } from "./functions";
 import axios, { isCancel, AxiosError } from "axios";
 
-export default async function axiosfunc (grade:number,printer:number) {
+export default async function axiosfunc (grade,printer) {
     console.log("axiosfunc")
     axios.post(apipathfinder(grade), {
       body:{
