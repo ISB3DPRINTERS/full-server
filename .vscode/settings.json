@@ -1,15 +1,17 @@
 {
     "cSpell.words": [
-        "DPRINTERS",
-        "fileoverview",
         "apikeys",
         "apipathfinder",
         "axiosfunc",
+        "caniuse",
         "currentpass",
         "currentpassword",
         "datatoupdate",
+        "DPRINTERS",
         "evenrealerchanger",
+        "fileoverview",
         "findapikeys",
+        "getcost",
         "getcurrentpassword",
         "makenum",
         "middleschool",
@@ -19,10 +21,9 @@
         "passwordchanger",
         "pathtoapikeys",
         "pathtopass",
-        "therealchanger",
-        "supabase",
-        "caniuse",
         "resetfunc",
-        "resetfuncreturn"
+        "resetfuncreturn",
+        "supabase",
+        "therealchanger"
     ]
 }

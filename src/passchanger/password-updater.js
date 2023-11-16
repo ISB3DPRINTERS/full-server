@@ -1,4 +1,4 @@
-// Copyright 2023 and onwards Ravinder Olivier Singh
+// Copyright 2023 and onwards Ravinder Olivier Singh Dadiala
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -28,8 +28,7 @@ export default async function therealchanger(grade){
     
     
     //uses axios to send put request
-        var apikeys = findapikeys(grade,printer);
-    const res = await axiosfunc
+    const res = await axiosfunc(grade)
     console.log(res);
   }
 
