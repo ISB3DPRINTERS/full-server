@@ -62,7 +62,7 @@ export function Login() {
       </form>
       <br />
       <p>
-        Don't have an account? <Link to="/signup">Sign Up</Link>
+        Don't have an account? (WILL BE REMOVED IN FUTURE) <Link to="/signup">Sign Up</Link>
       </p>
     </>
   )
