@@ -13,6 +13,7 @@
         "findapikeys",
         "getcost",
         "getcurrentpassword",
+        "getkey",
         "makenum",
         "middleschool",
         "newpassword",
