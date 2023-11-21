@@ -48,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-syntax-import-assertions": "^7.23.3",
     "@babel/plugin-syntax-import-attributes": "^7.23.3",
     "@types/axios": "^0.14.0",
     "@types/node": "^20.9.0",
