@@ -1,9 +1,0 @@
-{
-    "parserOptions": {
-      "babelOptions": {
-        "parserOpts": {
-          "plugins": ["importAssertions"]
-        }
-      }
-    }
-  }
