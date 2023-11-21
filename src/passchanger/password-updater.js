@@ -24,6 +24,7 @@ import axios, { isCancel, AxiosError } from "axios";
 import axiosfunc from "./axiosfunc";
 
 export default async function therealchanger(grade){
+  const newpassword = passwordarray(grade,printer,"new")
   async function evenrealerchanger(grade, printer) {
     
     

@@ -18,14 +18,14 @@
  * @author ravinder-Olivier@outlook.com (Ravinder Olivier Singh Dadiala)
  *
 */
-import { findapikeys, apipathfinder, passwordarray } from "./functions";
+import { findapikeys, apipathfinder, passwordarray, passwordarrayupdater } from "./functions";
 import axios, { isCancel, AxiosError } from "axios";
 
-export default async function axiosfunc (grade,printer) {
+export default async function axiosfunc (grade,printer,newpassword) {
     console.log("axiosfunc")
-    axios.post(apipathfinder(grade), {
+    axios.post(apipathfinder(grade,printer), {
       body:{
-        password: passwordarray(grade,printer,"new"),
+        password: newpassword,
         current: passwordarray(grade,printer,"old"),
       },
       headers: {
@@ -33,6 +33,7 @@ export default async function axiosfunc (grade,printer) {
       },
     })
     .then(function (response) {
+      passwordarrayupdater(grade,printer,newpassword)
       console.log(response);
     })
     .catch(function (error) {
@@ -40,4 +41,5 @@ export default async function axiosfunc (grade,printer) {
     });
 
     console.log("axios func finished redid printer"+printer+"grade"+grade)
+
   }

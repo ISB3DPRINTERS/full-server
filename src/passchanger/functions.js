@@ -41,15 +41,12 @@ export const makenum = (length) => {
 
 
 export const getcurrentuserpassword = (grade, printer) => {
-  
-  var currentpass = "abc"; //TESTING PURPOSES ONLY
-  return currentpass;
+  return userpasswords.printer.grade;
 };
 
 
-export const findapikeys = (grade, printer) => {
-
-  return "1234";
+export const findapikeys = (printer) => {
+  return apikeys.printer;
 };
 
 
@@ -66,9 +63,24 @@ export const passwordarray = (grade, printer,which) => {
 };
 
 
-export const apipathfinder = (grade) => {
-  var path = "/api/access/users/grade" + grade + "/password";
-  return path;
+export const passwordarrayupdater = (grade,printer,newpassword) => {
+  
+}
+
+
+export const apipathfinder = (grade,printer) => {
+  if (printer == 1) {
+    return {"127.0.0.1:8001/api/access/users/grade" + grade + "/password"}
+}
+  else if (printer == 2) {
+    return ("127.0.0.1:8002/api/access/users/grade" + grade + "/password")
+  }
+  else if (printer == 3) {
+    return ("127.0.0.1:8003/api/access/users/grade" + grade + "/password") 
+  }
+  else if (printer == 4) {
+    return ("127.0.0.1:8004/api/access/users/grade" + grade + "/password")
+  }
 };
 
 
