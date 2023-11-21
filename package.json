@@ -5,6 +5,7 @@
   "description": "This is the full ISB3DPRINTERS server",
   "license": "Apache-2.0",
   "private": false,
+  "type": "module",
   "dependencies": {
     "@supabase/supabase-js": "^1.7.7",
     "@testing-library/jest-dom": "^5.11.4",
@@ -48,7 +49,6 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-import-attributes-to-assertions": "^7.23.3",
     "@babel/plugin-proposal-private-property-in-object": "^7.14.5",
     "@types/axios": "^0.14.0",
     "@types/node": "^20.9.0",
