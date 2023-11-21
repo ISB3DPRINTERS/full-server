@@ -25,9 +25,9 @@
     "ws": "^8.14.2"
   },
   "scripts": {
-    "start": "react-app-scripts start",
-    "build": "react-app-scripts build",
-    "test": "react-app-scripts test",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
