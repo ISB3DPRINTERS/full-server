@@ -20,7 +20,7 @@
 */
 import passtools from "./password-updater";
 import axios, { isCancel, AxiosError } from "axios";
-import * as fs from'fs';
+const fs = require('node:fs');
 import apikeys from "../../../info/apikeys.json" assert { type: 'json' }
 import userpasswords from '../../../info/userpasswords.json' assert {type: 'json'}
 
@@ -63,8 +63,15 @@ export const passwordarray = (grade, printer,which) => {
 };
 
 
-export const passwordarrayupdater = (grade,printer,newpassword) => {
-  
+export const passwordarrayupdater = (grade,newpassword) => {
+    
+  userpasswords.grade = newpassword;
+    
+  fs.writeFile('../../../info/userpasswords.json', JSON.stringify(userpasswords), function writeJSON(err) {
+    if (err) return console.log(err);
+    console.log(JSON.stringify(userpassswords, null, 2));
+    console.log('writing to ' + '../../../info/userpasswords.json');
+  });
 }
 
 

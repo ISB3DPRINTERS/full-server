@@ -19,23 +19,21 @@
  *
 */
 
-import { findapikeys, apipathfinder, passwordarray } from "./functions";
+import { findapikeys, apipathfinder, passwordarray, passwordarrayupdater } from "./functions";
 import axios, { isCancel, AxiosError } from "axios";
 import axiosfunc from "./axiosfunc";
 
-export default async function therealchanger(grade){
+export default async function therealchanger(grade,printer){
   const newpassword = passwordarray(grade,printer,"new")
   async function evenrealerchanger(grade, printer) {
-    
-    
     //uses axios to send put request
-    const res = await axiosfunc(grade)
+    const res = await axiosfunc(grade, printer)
     console.log(res);
   }
-
   await evenrealerchanger(grade, 1);
   await evenrealerchanger(grade, 2);
   await evenrealerchanger(grade, 3);
   await evenrealerchanger(grade, 4);
+  passwordarrayupdater(grade,newpassword)
   // will call for each printer
 }
