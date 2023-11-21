@@ -21,8 +21,8 @@
 import passtools from "./password-updater";
 import axios, { isCancel, AxiosError } from "axios";
 const fs = require('node:fs');
-import apikeys from "json!../../../info/apikeys.json" 
-import userpasswords from 'json!../../../info/userpasswords.json' 
+import apikeys from "json-loader!../../../info/apikeys.json" 
+import userpasswords from 'json-loader!../../../info/userpasswords.json' 
 
 
 export const makenum = (length) => {
