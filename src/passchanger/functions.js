@@ -18,11 +18,12 @@
  * @author ravinder-Olivier@outlook.com (Ravinder Olivier Singh Dadiala)
  *
 */
+/* eslint-disable import/no-webpack-loader-syntax */
+import apikeys from "json-loader!../../../info/apikeys.json" 
+import userpasswords from 'json-loader!../../../info/userpasswords.json'
 import passtools from "./password-updater";
 import axios, { isCancel, AxiosError } from "axios";
-const fs = require('node:fs');
-import apikeys from "json-loader!../../../info/apikeys.json" 
-import userpasswords from 'json-loader!../../../info/userpasswords.json' 
+const fs = require('node:fs'); 
 
 
 export const makenum = (length) => {
