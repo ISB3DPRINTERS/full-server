@@ -21,8 +21,8 @@
 import passtools from "./password-updater";
 import axios, { isCancel, AxiosError } from "axios";
 const fs = require('node:fs');
-import apikeys from "../../../info/apikeys.json" assert { type: 'json' }
-import userpasswords from '../../../info/userpasswords.json' assert {type: 'json'}
+import apikeys from "../../../info/apikeys.json" with { type: 'json' }
+import userpasswords from '../../../info/userpasswords.json' with {type: 'json'}
 
 
 
