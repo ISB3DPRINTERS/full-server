@@ -21,9 +21,7 @@
 /* eslint-disable import/no-webpack-loader-syntax */
 import apikeys from "json-loader!../data/apikeys.json" 
 import userpasswords from 'json-loader!../data/userkeys.json'
-import passtools from "./password-updater";
-import axios, { isCancel, AxiosError } from "axios";
-import * as fs from 'node:fs';
+import passtools from "./password-updater"
 
 export const makenum = (length) => {
   let result = "";
