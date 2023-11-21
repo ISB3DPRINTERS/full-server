@@ -74,24 +74,21 @@ export const passwordarrayupdater = (grade,newpassword) => {
 }
 
 
-export const apipathfinder = (grade,printer) => {
+export const apipathfinder = (printer,grade) => {
   if (printer == 1) {
-    return {"127.0.0.1:8001/api/access/users/grade" + grade + "/password"}
+    return { path: "127.0.0.1:8001/api/access/users/grade" + grade + "/password" };
+  } else if (printer == 2) {
+    return { path: "127.0.0.1:8002/api/access/users/grade" + grade + "/password" };
+  } else if (printer == 3) {
+    return { path: "127.0.0.1:8003/api/access/users/grade" + grade + "/password" };
+  } else if (printer == 4) {
+    return { path: "127.0.0.1:8004/api/access/users/grade" + grade + "/password" };
+  }
 }
-  else if (printer == 2) {
-    return ("127.0.0.1:8002/api/access/users/grade" + grade + "/password")
-  }
-  else if (printer == 3) {
-    return ("127.0.0.1:8003/api/access/users/grade" + grade + "/password") 
-  }
-  else if (printer == 4) {
-    return ("127.0.0.1:8004/api/access/users/grade" + grade + "/password")
-  }
-};
 
 
-export default async function changerselection(grade)  {
-  if ((grade === "all")) {
+export default async function changerselection(grade) {
+  if (grade === "all") {
     await passtools(6);
     await passtools(7);
     await passtools(8);
@@ -99,28 +96,21 @@ export default async function changerselection(grade)  {
     await passtools(10);
     await passtools(11);
     await passtools(12);
-  } else if ((grade === "6")) {
+  } else if (grade === "6") {
     await passtools(6);
-  } else if ((grade === "7")) {
+  } else if (grade === "7") {
     await passtools(7);
-  } else if ((grade === "8")) {
+  } else if (grade === "8") {
     await passtools(8);
-  } else if ((grade === "9")) {
+  } else if (grade === "9") {
     await passtools(9);
-  } else if ((grade === "10")) {
+  } else if (grade === "10") {
     await passtools(10);
-  } else if ((grade === "11")) {
-    passtools(11);
-  } else if ((grade === "12")) {
-    await passtools(8);
-  } else if ((grade === "highschool")) {
-    await passtools(6);
-    await passtools(7);
-    await passtools(8);
-  } else if ((grade === "middleschool")) {
-    await passtools(9);
-    await passtools(10);
+  } else if (grade === "11") {
     await passtools(11);
-    await passtools(12);
+  } else if (grade === "12") {
+    await passtools(8);
+  } else if (grade === "highschool") {
+    await passtools(6);
   }
-};
+}
