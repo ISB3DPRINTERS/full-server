@@ -19,8 +19,8 @@
  *
 */
 /* eslint-disable import/no-webpack-loader-syntax */
-import apikeys from "json-loader!../../../info/apikeys.json" 
-import userpasswords from 'json-loader!../../../info/userpasswords.json'
+import apikeys from "json-loader!../data/apikeys.json" 
+import userpasswords from 'json-loader!../data/userkeys.json'
 import passtools from "./password-updater";
 import axios, { isCancel, AxiosError } from "axios";
 const fs = require('node:fs'); 
@@ -57,8 +57,8 @@ export const passwordarray = (grade, printer,which) => {
     password: newpassword,
     current: currentpassword,
   };
-  if (which == "old") {return currentpassword}
-  else if (which == "new") {return newpassword}
+  if (which === "old") {return currentpassword}
+  else if (which === "new") {return newpassword}
   else {return "error wrong selector"}
 };
 
@@ -69,20 +69,20 @@ export const passwordarrayupdater = (grade,newpassword) => {
     
   fs.writeFile('../../../info/userpasswords.json', JSON.stringify(userpasswords), function writeJSON(err) {
     if (err) return console.log(err);
-    console.log(JSON.stringify(userpassswords, null, 2));
+    console.log(JSON.stringify('../../../info/userpasswords.json', null, 2));
     console.log('writing to ' + '../../../info/userpasswords.json');
   });
 }
 
 
 export const apipathfinder = (printer,grade) => {
-  if (printer == 1) {
+  if (printer === 1) {
     return { path: "127.0.0.1:8001/api/access/users/grade" + grade + "/password" };
-  } else if (printer == 2) {
+  } else if (printer === 2) {
     return { path: "127.0.0.1:8002/api/access/users/grade" + grade + "/password" };
-  } else if (printer == 3) {
+  } else if (printer === 3) {
     return { path: "127.0.0.1:8003/api/access/users/grade" + grade + "/password" };
-  } else if (printer == 4) {
+  } else if (printer === 4) {
     return { path: "127.0.0.1:8004/api/access/users/grade" + grade + "/password" };
   }
 }
