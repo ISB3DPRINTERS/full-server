@@ -20,6 +20,6 @@
 */
 import functions from "./functions";
 
-export default async function(grade) {
+export default async function caller(grade) {
   return await functions(grade)
 }

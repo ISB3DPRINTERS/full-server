@@ -20,6 +20,11 @@
 */
 import passtools from "./password-updater";
 import axios, { isCancel, AxiosError } from "axios";
+import * as fs from'fs';
+import apikeys from "../../../info/apikeys.json" assert { type: 'json' }
+import userpasswords from '../../../info/userpasswords.json' assert {type: 'json'}
+
+
 
 export const makenum = (length) => {
   let result = "";
@@ -33,41 +38,41 @@ export const makenum = (length) => {
   }
   return result;
 };
-export const getcurrentpassword = (grade, printer) => {
-  var pathtopass = "pass.txt";
-  // var currentpass = fs.readFileSync(pathtopass, 'utf8');
+
+
+export const getcurrentuserpassword = (grade, printer) => {
+  
   var currentpass = "abc"; //TESTING PURPOSES ONLY
   return currentpass;
 };
 
 
 export const findapikeys = (grade, printer) => {
-  var pathtoapikeys = "keys.txt";
-  // var apikeys = fs.readFileSync(apikeys, 'utf8');
+
   return "1234";
 };
 
 
 export const passwordarray = (grade, printer,which) => {
-  var currentpassword = getcurrentpassword(grade, printer);
+  var currentpassword = getcurrentuserpassword(grade, printer);
   var newpassword = makenum(7);
   var datatoupdate = {
     password: newpassword,
     current: currentpassword,
   };
-  if (which = "old") {return currentpassword}
-  else if (which = "new") {return newpassword}
+  if (which == "old") {return currentpassword}
+  else if (which == "new") {return newpassword}
   else {return "error wrong selector"}
 };
 
 
 export const apipathfinder = (grade) => {
-  var path = "/api/access/users/" + "grade" + grade + "/password";
+  var path = "/api/access/users/grade" + grade + "/password";
   return path;
 };
 
 
-export default async function(grade)  {
+export default async function changerselection(grade)  {
   if ((grade === "all")) {
     await passtools(6);
     await passtools(7);
