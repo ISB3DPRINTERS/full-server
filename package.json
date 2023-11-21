@@ -24,9 +24,9 @@
     "ws": "^8.14.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start --scripts-version react-scripts-ts",
+    "build": "react-app-rewired build --scripts-version react-scripts-ts",
+    "test": "react-app-rewired test --scripts-version react-scripts-ts",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -55,7 +55,9 @@
     "@types/node-cron": "^3.0.11",
     "@types/ws": "^8.5.9",
     "@typescript-eslint/parser": "^6.10.0",
+    "customize-cra": "^1.0.0",
     "prettier": "^3.0.3",
+    "react-app-rewired": "^2.2.1",
     "rimraf": "^5.0.5"
   }
 }
