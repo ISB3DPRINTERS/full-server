@@ -51,10 +51,10 @@ export const findapikeys = (printer) => {
 export const passwordarray = (grade, printer,which) => {
   var currentpassword = getcurrentuserpassword(grade, printer);
   var newpassword = makenum(7);
-  var datatoupdate = {
-    password: newpassword,
-    current: currentpassword,
-  };
+  //var datatoupdate = {
+  //  password: newpassword,
+ //   current: currentpassword,
+ // };
   if (which === "old") {return currentpassword}
   else if (which === "new") {return newpassword}
   else {return "error wrong selector"}

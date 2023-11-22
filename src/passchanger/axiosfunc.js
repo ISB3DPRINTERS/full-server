@@ -19,7 +19,7 @@
  *
 */
 import { findapikeys, apipathfinder, passwordarray, passwordarrayupdater } from "./functions";
-import axios, { isCancel, AxiosError } from "axios";
+import axios from "axios";
 
 export default async function axiosfunc (grade,printer,newpassword) {
     console.log("axiosfunc")

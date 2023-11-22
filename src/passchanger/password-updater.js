@@ -19,8 +19,7 @@
  *
 */
 
-import { findapikeys, apipathfinder, passwordarray, passwordarrayupdater } from "./functions";
-import axios, { isCancel, AxiosError } from "axios";
+import { passwordarray, passwordarrayupdater } from "./functions";
 import axiosfunc from "./axiosfunc";
 
 export default async function therealchanger(grade,printer){
