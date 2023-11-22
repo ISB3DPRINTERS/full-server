@@ -19,8 +19,8 @@
  *
 */
 /* eslint-disable import/no-webpack-loader-syntax */
-import apikeys from "json-loader!../data/apikeys.json";
-import userpasswords from 'json-loader!../data/userpasswords.json';
+import userpasswords from '../data/userpasswords.json'
+import apikeys from '../data/apikeys.json'
 import passtools from "./password-updater";
 import * as fs from 'fs';
 

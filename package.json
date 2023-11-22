@@ -55,7 +55,6 @@
     "@types/ws": "^8.5.9",
     "@typescript-eslint/parser": "^6.10.0",
     "customize-cra": "^1.0.0",
-    "json-loader": "^0.5.7",
     "prettier": "^3.0.3",
     "rimraf": "^5.0.5"
   }
