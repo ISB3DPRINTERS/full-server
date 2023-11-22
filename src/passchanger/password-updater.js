@@ -29,11 +29,50 @@ export default async function therealchanger(grade,printer){
     //uses axios to send put request
     const res = await axiosfunc(grade, printer)
     console.log(res);
+    if (res === 409) {
+      return 409
+    }
+    else {
+      return 202
+    }
   }
-  await evenrealerchanger(grade, 1);
-  await evenrealerchanger(grade, 2);
-  await evenrealerchanger(grade, 3);
-  await evenrealerchanger(grade, 4);
+  function changercheck(evenrealerchangercheck) {
+    if (evenrealerchangercheck === 409) {
+      return 409
+    }
+    else if (evenrealerchangercheck === 202) {
+      console.log('successful change')
+    }
+    else {
+      return 409
+    }
+  }
+
+  // using the above shorthand to check and log each printer
+  if (changercheck(await evenrealerchanger(grade, 1)) === 202) {
+    console.log('first printer success');
+  } else {
+    return 409;
+  }
+
+  if (changercheck(await evenrealerchanger(grade, 2)) === 202) {
+    console.log('first printer success');
+  } else {
+    return 409;
+  }
+
+  if (changercheck(await evenrealerchanger(grade, 3)) === 202) {
+    console.log('first printer success');
+  } else {
+    return 409;
+  }
+
+  if (changercheck(await evenrealerchanger(grade, 4)) === 202) {
+    console.log('second printer success');
+  } else {
+    return 409;
+  }
+  
   passwordarrayupdater(grade,newpassword)
-  // will call for each printer
+  // will update database
 }

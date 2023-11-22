@@ -22,6 +22,7 @@
 import apikeys from "json-loader!../data/apikeys.json" 
 import userpasswords from 'json-loader!../data/userkeys.json'
 import passtools from "./password-updater"
+import { AsyncLocalStorage } from "async_hooks";
 
 export const makenum = (length) => {
   let result = "";
@@ -60,15 +61,13 @@ export const passwordarray = (grade, printer,which) => {
 };
 
 
-export const passwordarrayupdater = (grade,newpassword) => {
-    
-  userpasswords.grade = newpassword;
-    
-  fs.writeFile('../../../info/userpasswords.json', JSON.stringify(userpasswords), function writeJSON(err) {
-    if (err) return console.log(err);
-    console.log(JSON.stringify('../../../info/userpasswords.json', null, 2));
-    console.log('writing to ' + '../../../info/userpasswords.json');
-  });
+export const passwordarrayupdater = async (grade,newpassword) => {
+  var passupdatevar = await JSON.parse(fs.readFile('../data/userpasswords.json'))
+  if (grade == 1) {
+    passupdatevar.grade = newpassword
+    await fs.writeFile(JSON.stringify(passupdatevar))
+  }
+ 
 }
 
 
@@ -94,21 +93,25 @@ export default async function changerselection(grade) {
     await passtools(10);
     await passtools(11);
     await passtools(12);
-  } else if (grade === "6") {
+  } else if (grade === 6) {
     await passtools(6);
-  } else if (grade === "7") {
+  } else if (grade === 7) {
     await passtools(7);
-  } else if (grade === "8") {
+  } else if (grade === 8) {
     await passtools(8);
-  } else if (grade === "9") {
+  } else if (grade === 9) {
     await passtools(9);
-  } else if (grade === "10") {
+  } else if (grade === 10) {
     await passtools(10);
-  } else if (grade === "11") {
+  } else if (grade === 11) {
     await passtools(11);
-  } else if (grade === "12") {
+  } else if (grade === 12) {
     await passtools(8);
   } else if (grade === "highschool") {
     await passtools(6);
   }
+    else {
+      console.log('error')
+      return 'error'
+    }
 }

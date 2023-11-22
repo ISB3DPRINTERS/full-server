@@ -35,11 +35,12 @@ export default async function axiosfunc (grade,printer,newpassword) {
     .then(function (response) {
       passwordarrayupdater(grade,printer,newpassword)
       console.log(response);
+      return response
     })
     .catch(function (error) {
       console.log(error);
+      return 409
     });
 
     console.log("axios func finished redid printer"+printer+"grade"+grade)
-
   }

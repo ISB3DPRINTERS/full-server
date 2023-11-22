@@ -4,11 +4,13 @@
         "apipathfinder",
         "axiosfunc",
         "caniuse",
+        "changercheck",
         "currentpass",
         "currentpassword",
         "datatoupdate",
         "DPRINTERS",
         "evenrealerchanger",
+        "evenrealerchangercheck",
         "fileoverview",
         "findapikeys",
         "getcost",
@@ -19,7 +21,9 @@
         "middleschool",
         "newpassword",
         "passtools",
+        "passupdatevar",
         "passwordarray",
+        "passwordarrayupdater",
         "passwordchanger",
         "pathtoapikeys",
         "pathtopass",
@@ -27,6 +31,7 @@
         "resetfuncreturn",
         "supabase",
         "therealchanger",
+        "therealchangertimer",
         "userpasswords"
     ]
 }
