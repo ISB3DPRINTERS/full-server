@@ -20,10 +20,9 @@
 */
 /* eslint-disable import/no-webpack-loader-syntax */
 import apikeys from "json-loader!../data/apikeys.json";
-import userpasswords from 'json-loader!../data/userkeys.json';
+import userpasswords from 'json-loader!../data/userpasswords.json';
 import passtools from "./password-updater";
-import { AsyncLocalStorage } from "async_hooks";
-import * as fs from'fs';
+import * as fs from 'fs';
 
 export const makenum = (length) => {
   let result = "";
