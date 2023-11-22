@@ -63,7 +63,7 @@ export const passwordarray = (grade, printer,which) => {
 
 export const passwordarrayupdater = async (grade,newpassword) => {
   var passupdatevar = await JSON.parse(fs.readFile('../data/userpasswords.json'))
-  if (grade == 1) {
+  if (grade === 1) {
     passupdatevar.grade = newpassword
     await fs.writeFile(JSON.stringify(passupdatevar))
   }
