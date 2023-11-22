@@ -23,8 +23,9 @@
     "web-vitals": "^1.0.1",
     "ws": "^8.14.2"
   },
+  "stream": "npm:stream-browserify@3.0.0",
   "scripts": {
-    "start": "craco start",
+    "start": "react-scripts start",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
