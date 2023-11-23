@@ -19,10 +19,9 @@
  *
 */
 /* eslint-disable import/no-webpack-loader-syntax */
-import userpasswords from '../data/userpasswords.json'
-import apikeys from '../data/apikeys.json'
 import passtools from "./password-updater";
-import * as fs from 'fs';
+import supabase from '../supabase'
+
 
 export const makenum = (length) => {
   let result = "";
@@ -38,8 +37,18 @@ export const makenum = (length) => {
 };
 
 
-export const getcurrentuserpassword = (grade, printer) => {
-  return userpasswords.printer.grade;
+export const getcurrentuserpassword = async (grade, printer) => {
+  let { data: userpassword, error } = await supabase
+  .from('userpasswords')
+  .select()
+  .eq('grade',grade)
+  .single()
+if (error) {
+  console.log('supabase error')
+}
+
+  console.log("getuserpassword received" + userpassword.password)
+  return userpassword.password
 };
 
 
@@ -62,10 +71,10 @@ export const passwordarray = (grade, printer,which) => {
 
 
 export const passwordarrayupdater = async (grade,newpassword) => {
-  var passupdatevar = await JSON.parse(fs.readFile('../data/userpasswords.json'))
+  var passupdatevar = 'e' // await JSON.parse(fs.readFile('../data/userpasswords.json'))
   if (grade === 1) {
     passupdatevar.grade = newpassword
-    await fs.writeFile(JSON.stringify(passupdatevar))
+   // await fs.writeFile(JSON.stringify(passupdatevar))
   }
  
 }

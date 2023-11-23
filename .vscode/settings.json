@@ -18,6 +18,7 @@
         "getcurrentpassword",
         "getcurrentuserpassword",
         "getkey",
+        "getuserpassword",
         "makenum",
         "middleschool",
         "newpassword",
@@ -33,6 +34,7 @@
         "supabase",
         "therealchanger",
         "therealchangertimer",
+        "userpassword",
         "userpasswords"
     ]
 }
