@@ -18,9 +18,12 @@
  * @author ravinder-Olivier@outlook.com (Ravinder Olivier Singh Dadiala)
  *
 */
+
 /* eslint-disable import/no-webpack-loader-syntax */
+/* eslint-disable no-redeclare */
+
 import passtools from "./password-updater";
-import supabase from '../supabase'
+import { supabase } from '../supabase'
 
 
 export const makenum = (length) => {
@@ -41,19 +44,29 @@ export const getcurrentuserpassword = async (grade, printer) => {
   let { data: userpassword, error } = await supabase
   .from('userpasswords')
   .select()
-  .eq('grade',grade)
+  .eq('grade', grade)
   .single()
-if (error) {
-  console.log('supabase error')
-}
 
+  if (error) {
+    console.log('supabase error')
+  }
   console.log("getuserpassword received" + userpassword.password)
   return userpassword.password
 };
 
 
-export const findapikeys = (printer) => {
-  return apikeys.printer;
+export const findapikeys = async (printer) => {
+  let { data: apikey, error } = await supabase
+  .from('apikeys')
+  .select()
+  .eq('printer', printer)
+  .single()
+
+  if (error) {
+      console.log('supabase error')
+  }
+  console.log(apikey.key)
+
 };
 
 
@@ -66,18 +79,24 @@ export const passwordarray = (grade, printer,which) => {
  // };
   if (which === "old") {return currentpassword}
   else if (which === "new") {return newpassword}
-  else {return "error wrong selector"}
+  else {return 409}
 };
 
 
 export const passwordarrayupdater = async (grade,newpassword) => {
-  var passupdatevar = 'e' // await JSON.parse(fs.readFile('../data/userpasswords.json'))
-  if (grade === 1) {
-    passupdatevar.grade = newpassword
-   // await fs.writeFile(JSON.stringify(passupdatevar))
+  // var passupdatevar = 'e' // await JSON.parse(fs.readFile('../data/userpasswords.json'))
+  const { error } = await supabase
+  .from('userpasswords')
+  .update({ password: newpassword})
+  .eq('grade', grade)
+  if (error) {
+    console.log('supabase password updater failed')
   }
- 
+  else {
+    return 202
+  }
 }
+
 
 
 export const apipathfinder = (printer,grade) => {
@@ -95,32 +114,56 @@ export const apipathfinder = (printer,grade) => {
 
 export default async function changerselection(grade) {
   if (grade === "all") {
-    await passtools(6);
-    await passtools(7);
-    await passtools(8);
-    await passtools(9);
-    await passtools(10);
-    await passtools(11);
-    await passtools(12);
+    var status = await passtools(6);
+      if (status === 409) { return 409 };
+    status = await passtools(7);
+      if (status === 409) { return 409 };
+    status = await passtools(8);
+      if (status === 409) { return 409 };
+    status = await passtools(9);
+      if (status === 409) { return 409 };
+    status = await passtools(10);
+      if (status === 409) { return 409 };
+    status = await passtools(11);
+      if (status === 409) { return 409 };
+    status = await passtools(12);
+      if (status === 409) { return 409 };
+    return 202
   } else if (grade === 6) {
-    await passtools(6);
+    var status = await passtools(6);
+      if (status === 409) { return 409 };
+    return 202
   } else if (grade === 7) {
-    await passtools(7);
+    var status = await passtools(7);
+      if (status === 409) { return 409 };
+    return 202
   } else if (grade === 8) {
-    await passtools(8);
+    var status = await passtools(8);
+      if (status === 409) { return 409 };
+    return 202
   } else if (grade === 9) {
-    await passtools(9);
+    var status = await passtools(9);
+      if (status === 409) { return 409 };
+    return 202
   } else if (grade === 10) {
-    await passtools(10);
+    var status = await passtools(10);
+      if (status === 409) { return 409 };
+    return 202
   } else if (grade === 11) {
-    await passtools(11);
+    var status = await passtools(11);
+      if (status === 409) { return 409 };
+    return 202
   } else if (grade === 12) {
-    await passtools(8);
+    var status = await passtools(8);
+      if (status === 409) { return 409 };
+    return 202
   } else if (grade === "highschool") {
-    await passtools(6);
+    var status = await passtools(6);
+      if (status === 409) { return 409 };
+    return 202
   }
     else {
-      console.log('error')
-      return 'error'
+      console.log('changerselection error eof')
+      return 409
     }
 }

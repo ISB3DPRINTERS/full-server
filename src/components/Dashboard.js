@@ -48,7 +48,7 @@ export function Dashboard() {
         setLoading(true);
 
         let resetfuncreturn = await resetfunc(initials,grade)
-        if (resetfuncreturn === true) {
+        if (resetfuncreturn === 202) {
             setLoading(false);
         }
         else {
