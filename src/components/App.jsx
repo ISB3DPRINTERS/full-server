@@ -24,11 +24,11 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-import { Signup } from './Signup.js'
-import { Dashboard } from './Dashboard.js'
-import { AuthProvider } from '../contexts/Auth'
-import { Login } from './Login.js'
-import { PrivateRoute } from './PrivateRoute.js'
+import { Signup } from './Signup.jsx'
+import { Dashboard } from './Dashboard.jsx'
+import { AuthProvider } from '../contexts/Auth.jsx'
+import { Login } from './Login.jsx'
+import { PrivateRoute } from './PrivateRoute.jsx'
 
 export function App() {
   return (
