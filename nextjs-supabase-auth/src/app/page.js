@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 import getinfo from "../api/getinfo"
 import resetfunc from "../api/passchanger/main"
 import SignOut from 'src/components/SignOut';
-import React, from 'react';
+import React from 'react';
 
 export default async function Home() {
   const supabase = createServerComponentClient({ cookies });

@@ -22,19 +22,17 @@
 import { passwordarray, passwordarrayupdater } from "./functions";
 import axiosfunc from "./axiosfunc";
 
+
 export default async function therealchanger(grade,printer){
   const newpassword = passwordarray(grade,printer,"new")
   async function evenrealerchanger(grade, printer) {
     //uses axios to send put request
     const res = await axiosfunc(grade, printer)
     console.log(res);
-    if (res === 409) {
-      return 409
-    }
-    else {
       return 202
-    }
   }
+
+
   function changercheck(evenrealerchangercheck) {
     if (evenrealerchangercheck === 409) {
       return 409

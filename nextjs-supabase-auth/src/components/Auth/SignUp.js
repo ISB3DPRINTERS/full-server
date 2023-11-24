@@ -6,6 +6,7 @@ import cn from 'classnames';
 import { Field, Form, Formik } from 'formik';
 import Link from 'next/link';
 import * as Yup from 'yup';
+import React from 'react';
 
 const SignUpSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),

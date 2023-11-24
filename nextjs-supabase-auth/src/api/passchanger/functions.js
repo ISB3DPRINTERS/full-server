@@ -101,13 +101,19 @@ export const passwordarrayupdater = async (grade,newpassword) => {
 
 export const apipathfinder = (printer,grade) => {
   if (printer === 1) {
-    return { path: "127.0.0.1:8001/api/access/users/grade" + grade + "/password" };
+    var printerpath = "127.0.0.1:8001/api/access/users/grade" + grade + "/password" 
+    return { printerpath };
   } else if (printer === 2) {
-    return { path: "127.0.0.1:8002/api/access/users/grade" + grade + "/password" };
+    var printerpath = "127.0.0.1:8002/api/access/users/grade" + grade + "/password"
+    return { printerpath }
   } else if (printer === 3) {
-    return { path: "127.0.0.1:8003/api/access/users/grade" + grade + "/password" };
+    var printerpath = "127.0.0.1:8003/api/access/users/grade" + grade + "/password"
+    return { printerpath };
   } else if (printer === 4) {
-    return { path: "127.0.0.1:8004/api/access/users/grade" + grade + "/password" };
+    var printerpath = "127.0.0.1:8004/api/access/users/grade" + grade + "/password"
+    return { printerpath };
+  } else {
+    return 409
   }
 }
 

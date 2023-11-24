@@ -24,7 +24,6 @@ import getinfo from "../nextjs-supabase-auth/src/api/getinfo"
 import resetfunc from "../nextjs-supabase-auth/src/api/passchanger/main"
 import { FC } from "react";
 import * as React from 'react'
-import resetfunc from "../nextjs-supabase-auth/src/api/passchanger/main"
 import { useState } from "react";
 
 import { useRouter } from 'next/router'
