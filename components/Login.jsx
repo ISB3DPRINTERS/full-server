@@ -21,7 +21,7 @@
 import { useRef, useState } from 'react'
 import { useHistory, Link } from 'react-router-dom'
 
-import { useAuth } from '../contexts/Auth'
+import { useAuth } from './Auth'
 
 export function Login() {
   const emailRef = useRef()

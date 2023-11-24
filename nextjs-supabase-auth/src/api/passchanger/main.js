@@ -14,15 +14,13 @@
 /* globals, server,client */
 
 /**
- * @fileoverview Initializes Supabase client
+ * @fileoverview Main Func for the password changer
  * @author ravinder-Olivier@outlook.com (Ravinder Olivier Singh Dadiala)
  *
 */
-import { createClient } from '@supabase/supabase-js'
+import functions from "./functions";
 
-const supabase = createClient(
-  process.env.REACT_APP_SUPABASE_URL,
-  process.env.REACT_APP_SUPABASE_PUBLIC_KEY
-)
-
-export { supabase }
+export default async function caller(initials,grade) {
+  console.log(initials+"called resetfunction")
+  return await functions(grade)
+}

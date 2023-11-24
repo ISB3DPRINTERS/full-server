@@ -19,13 +19,16 @@
  *
 */
 import { useHistory } from 'react-router'
-import { useAuth } from '../contexts/Auth'
-
+import { useAuth } from './Auth'
+import getinfo from "../nextjs-supabase-auth/src/api/getinfo"
+import resetfunc from "../nextjs-supabase-auth/src/api/passchanger/main"
 import { FC } from "react";
 import * as React from 'react'
-import getinfo from "../api/getinfo"
+import resetfunc from "../nextjs-supabase-auth/src/api/passchanger/main"
 import { useState } from "react";
-import resetfunc from "../passchanger/main"
+
+import { useRouter } from 'next/router'
+
 
 export function Dashboard() {
   const { user, signOut } = useAuth()
@@ -33,8 +36,9 @@ export function Dashboard() {
 
   async function handleSignOut() {
     await signOut()
+    
 
-    history.push('/login')
+    useRouter.push('/login',{ scroll: false })
   }
 
 

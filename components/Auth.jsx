@@ -19,7 +19,7 @@
  *
 */
 import React, { useContext, useState, useEffect } from 'react'
-import { supabase } from '../supabase.js'
+import { supabase } from '../nextjs-supabase-auth/src/api/supabase.js'
 
 const AuthContext = React.createContext()
 

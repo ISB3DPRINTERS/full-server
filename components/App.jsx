@@ -26,11 +26,11 @@ import {
 } from "react-router-dom";
 import { Signup } from './Signup.jsx'
 import { Dashboard } from './Dashboard.jsx'
-import { AuthProvider } from '../contexts/Auth.jsx'
+import { AuthProvider } from './Auth.jsx'
 import { Login } from './Login.jsx'
 import { PrivateRoute } from './PrivateRoute.jsx'
 
-export function App() {
+export default function App() {
   return (
     <div>
       <h1>ISB3DPRINTERS Teachers' Console</h1>

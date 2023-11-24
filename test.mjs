@@ -24,7 +24,7 @@
 
 // Import the Supabase client
 import { createClient } from '@supabase/supabase-js';
-import { supabase }  from '../full-server/src/supabase.js'
+import { supabase }  from './nextjs-supabase-auth/src/api/supabase.js'
 // Initialize the client with your Supabase project URL and API key
 
 // Define the table you want to query

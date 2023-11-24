@@ -6,7 +6,10 @@
   "license": "Apache-2.0",
   "private": false,
   "dependencies": {
-    "@supabase/supabase-js": "^1.7.7",
+    "@supabase/auth-helpers-nextjs": "^0.8.7",
+    "@supabase/auth-ui-react": "^0.4.6",
+    "@supabase/auth-ui-shared": "^0.1.8",
+    "@supabase/supabase-js": "^2.38.5",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -26,10 +29,9 @@
   },
   "stream": "npm:stream-browserify@3.0.0",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "build",
-    "test": "craco test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "eslintConfig": {
     "extends": [

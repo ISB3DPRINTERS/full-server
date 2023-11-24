@@ -14,12 +14,24 @@
 /* globals, server,client */
 
 /**
- * @fileoverview Main Func for the password changer
+ * @fileoverview A Router File
  * @author ravinder-Olivier@outlook.com (Ravinder Olivier Singh Dadiala)
  *
 */
-import functions from "./functions";
+import React from 'react'
+import { Route, Redirect } from 'react-router-dom'
 
-export default async function caller(grade) {
-  return await functions(grade)
+import { useAuth } from './Auth'
+
+export function PrivateRoute({ component: Component, ...rest }) {
+  const { user } = useAuth()
+
+  return (
+    <Route
+      {...rest}
+      render={(props) => {
+        return user ? <Component {...props} /> : <Redirect to="/login" />
+      }}
+    ></Route>
+  )
 }

@@ -23,7 +23,7 @@
 /* eslint-disable no-redeclare */
 
 import passtools from "./password-updater";
-import { supabase } from '../supabase'
+
 
 
 export const makenum = (length) => {
