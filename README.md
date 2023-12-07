@@ -1,1 +1,10 @@
 # full-server
+
+
+# TODO
+
+## ADD IN SLICER PROJECT
+- ### ADD INTO SAME NPM PROJECT
+
+## HAPROXY CONFIG
+
