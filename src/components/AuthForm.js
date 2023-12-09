@@ -30,8 +30,8 @@ export default function AuthForm() {
 
     return (
         <div>
-            <div className="flex p-2 px-4 text-xl bg-purple-400 text-white font-bold justify-between">
-                Authentication
+            <div className="flex p-2 px-4 text-xl bg-black text-white font-bold justify-between">
+                Teachers Console
             </div>
             <div className="flex justify-center items-center">
                 <div>
@@ -72,7 +72,7 @@ export default function AuthForm() {
                             fontSize: "12px",
                         }}
                     >
-                        {isLogin ? "Switch to Sign Up" : "Switch to Login"}
+                        {isLogin ? "Switch to Sign Up (WILL BE REMOVED IN FUTURE)" : "Switch to Login"}
                     </button>
                 </div>
             </div>

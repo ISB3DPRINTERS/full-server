@@ -10,7 +10,7 @@ const Dashboard = () => {
     };
     return (
         <div>
-            <h1>ISB3DPRINTERS Teachers' Console</h1>
+            <h1>ISB3DPRINTERS Teachers&apos; Console</h1>
             <button
                         className="text-white font-bold rounded text-sm mb-2"
                         onClick={() => handleLogout()}

@@ -14,30 +14,23 @@ export default function Home() {
                     </div>
                     <div className="text-sm">
                         <h1 className="text-xl font-bold mt-2">
-                            Technologies Used
+                            Pages
                         </h1>
-                        <span className="font-bold">Next.js:</span> Used for the
-                        overall frontend framework, providing features like fast
-                        navigation and server-side rendering. <br />
-                        <span className="font-bold">Tailwind CSS:</span>
-                        Utilized for the application&apos;s styling, offering
-                        utility classes that make it easy to build responsive
-                        and maintainable UIs. <br />
-                        <span className="font-bold">Supabase:</span> Used for
-                        the backend, specifically for handling user
-                        authentication. <br />
-                        <span className="font-bold">TMDB API:</span> Provides
-                        the data for popular movies, which is fetched and
-                        displayed in the application. <br />
-                        <span className="font-bold">React Query:</span> Used for
-                        data fetching, caching, and state management for the
-                        TMDB API calls.
+                        <span className="font-bold">
+                            <Link href="/auth" className="hover:text-purple-400">Slicer:</Link>
+                        </span> Turn your models into code (gcode) that the printer can understand <br />
+                        <span className="font-bold">
+                            <Link href="/auth" className="hover:text-purple-400">Printer Dispatch:</Link>
+                        </span> Send that prepared (gcode) to the printer to print <br />
+                        <span className="font-bold">
+                            <Link href="/auth" className="hover:text-purple-400">Teachers Console:</Link>
+                        </span> Go to the Teachers Console <br />
                     </div>
                 </div>
             </div>
             <div className="flex justify-center text-2xl">
                 <Link href="/auth" className="hover:text-purple-400">
-                    Go to Teachers Console
+                    Help
                 </Link>
             </div>
         </div>
