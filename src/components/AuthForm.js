@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import supabase from "../lib/supabase";
+import Link from "next/link";
 
 export default function AuthForm() {
     const [email, setEmail] = useState("");
@@ -31,7 +32,7 @@ export default function AuthForm() {
     return (
         <div>
             <div className="flex p-2 px-4 text-xl bg-black text-white font-bold justify-between">
-                Teachers Console
+            <Link href="/" className="hover:text-purple-400">ISB3DPRINTERS: Teachers&apos; Console</Link>
             </div>
             <div className="flex justify-center items-center">
                 <div>

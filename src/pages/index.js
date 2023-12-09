@@ -17,10 +17,10 @@ export default function Home() {
                             Pages
                         </h1>
                         <span className="font-bold">
-                            <Link href="/auth" className="hover:text-purple-400">Slicer:</Link>
+                            <Link href="/slicer" className="hover:text-purple-400">Slicer:</Link>
                         </span> Turn your models into code (gcode) that the printer can understand <br />
                         <span className="font-bold">
-                            <Link href="/auth" className="hover:text-purple-400">Printer Dispatch:</Link>
+                            <Link href="/printerDispatch" className="hover:text-purple-400">Printer Dispatch:</Link>
                         </span> Send that prepared (gcode) to the printer to print <br />
                         <span className="font-bold">
                             <Link href="/auth" className="hover:text-purple-400">Teachers Console:</Link>
@@ -29,7 +29,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="flex justify-center text-2xl">
-                <Link href="/auth" className="hover:text-purple-400">
+                <Link href="/help" className="hover:text-purple-400">
                     Help
                 </Link>
             </div>

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import supabase from "../lib/supabase";
 
 const Dashboard = () => {
     const handleLogout = async () => {
@@ -10,9 +11,10 @@ const Dashboard = () => {
     };
     return (
         <div>
+            
             <h1>ISB3DPRINTERS Teachers&apos; Console</h1>
             <button
-                        className="text-white font-bold rounded text-sm mb-2"
+                        className="text-black font-bold rounded text-sm mb-2"
                         onClick={() => handleLogout()}
                     >
                         Sign Out
