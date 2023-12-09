@@ -12,7 +12,7 @@ export default function AuthForm() {
     useEffect(() => {
         const { user } = supabase.auth.getSession();
         if (user) {
-            router.push("/dashboard");
+            router.push("/7b8b965ad4bca0e41ab51de7b31363a1");
         }
     }, [router]);
 
@@ -25,7 +25,7 @@ export default function AuthForm() {
         if (error) {
             console.error("Error:", error.message);
         } else if (user || !error) {
-            router.push("/dashboard");
+            router.push("/7b8b965ad4bca0e41ab51de7b31363a1");
         }
     };
 

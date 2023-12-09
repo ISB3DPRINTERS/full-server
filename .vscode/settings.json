@@ -1,6 +1,7 @@
 {
     "cSpell.words": [
         "apos",
+        "codepaths",
         "DPRINTERS",
         "gcode",
         "getcost",
@@ -12,6 +13,7 @@
         "manualfunc",
         "startcron",
         "supabase",
-        "tailwindcss"
+        "tailwindcss",
+        "tsbuildinfo"
     ]
 }

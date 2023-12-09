@@ -15,7 +15,13 @@ export default function Dashboard() {
             return;
         }
         window.location.href = "/auth";
-    };
+    }
+    useEffect(() => {
+        const { user } = supabase.auth.getSession();
+        if (user) {
+        console.log(user)
+        }
+    }, [router])
     return (
         <div>
             <div className="flex p-2 px-4 text-xl bg-black text-white font-bold justify-between">
