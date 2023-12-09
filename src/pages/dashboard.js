@@ -18,9 +18,11 @@ export default function Dashboard() {
     };
     return (
         <div>
-            <h1>Teachers&apos; Console</h1>
-            <br></br>
+            <div className="flex p-2 px-4 text-xl bg-black text-white font-bold justify-between">
+            <Link href="/" className="hover:text-purple-400">ISB3DPRINTERS: Teachers&apos; Console</Link>
+            </div>
             <strong>WARNING: Never give students access to this page</strong>
+            <br></br>
             <h3>Info Table</h3>
             <table>
                 <tbody>
