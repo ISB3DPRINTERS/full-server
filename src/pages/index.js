@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export default function Home() {
+
+
     return (
         <div>
             <div className="flex p-2 px-4 text-xl bg-black  text-white font-bold justify-between">

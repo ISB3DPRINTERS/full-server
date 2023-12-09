@@ -3,7 +3,15 @@
         "apos",
         "DPRINTERS",
         "gcode",
+        "getcost",
+        "getinfo",
+        "getinforeturn",
+        "getkey",
         "lsquo",
-        "supabase"
+        "mainfunc",
+        "manualfunc",
+        "startcron",
+        "supabase",
+        "tailwindcss"
     ]
 }
