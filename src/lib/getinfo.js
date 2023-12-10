@@ -3,14 +3,14 @@ import supabase from './supabase'
 
 const getcost = async (grade) => {
   let { data: filament, error } = await supabase
-    .from('filament')
+    .from('studentinfo')
     .select()
     .eq('grade', grade)
     .single()
   if (error) {
     console.log('supabase error')
   }
-  return filament
+  return filament.filament
 }
 
 const getcostarray = async () => {
@@ -29,14 +29,14 @@ const getcostarray = async () => {
 
 const getkey = async (grade) => {
   let { data: getkey, error } = await supabase
-    .from('key')
+    .from('studentinfo')
     .select()
     .eq('grade', grade)
     .single()
   if (error) {
     console.log('supabase error')
   }
-  return getkey
+  return getkey.key
 }
 
 const getkeyarray = async() => {
