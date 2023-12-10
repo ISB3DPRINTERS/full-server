@@ -7,7 +7,7 @@ export default function Slicer() {
             <Link href="/" className="hover:text-purple-400">ISB3DPRINTERS: Slicer</Link>
             </div>
             <iframe src="https://grid.space/kiri/" 
-            height="1000" width="1200" frameborder="0" align="center" allowFullScreen title="isb3dprinters slicer" 
+            height="1000" width="1200" frameborder="0" align="center" allowFullScreen title="isb3dprinters slicer" scrolling="no"
             ></iframe>
         </div>
     );

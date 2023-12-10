@@ -1,5 +1,5 @@
 import Link from "next/link";
-export default function printerDispatch() {
+export default function help() {
 
     return (
         <div>
