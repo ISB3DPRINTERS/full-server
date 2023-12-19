@@ -3,8 +3,24 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import supabase from "../lib/supabase";
 import Link from "next/link";
+import React from "react";
 
-export default async function Dashboard() {
+export const getServerSideProps = (async () => {
+    var costarray = await getinfo.getcostarray
+    const keyarray = await getinfo.getkeyarray
+    return { props: { costarray,keyarray } }
+})
+
+
+const notobjectgetkey = (grade) => {
+    return keyarray[grade];
+}
+
+function notobjectgetcost(grade) {
+    return 'e'
+}
+
+export default function Dashboard() {
     const [initials, setInitials] = useState("");
     const [grade, setGrade] = useState("");
     const [isLogin, setIsLogin] = useState(true);
@@ -35,8 +51,7 @@ export default async function Dashboard() {
         }
     }
     
-    const keyarray = await getinfo.getkeyarray()
-    const costarray = await getinfo.getcostarray()
+
 
     return (
         <div>
@@ -63,50 +78,50 @@ export default async function Dashboard() {
                 <tbody>
                     <tr>
                         <td>6th</td>
-                        <td>{keyarray[6]}</td>
-                        <td>{costarray[6]}</td>
+                        <td>{notobjectgetkey(6)}</td>
+                        <td>{notobjectgetcost(6)}</td>
                     </tr>
                 </tbody>
                 <tbody>
                     <tr>
                         <td>7th</td>
-                        <td>{keyarray[7]}</td>
-                        <td>{costarray[7]}</td>
+                        <td>{notobjectgetkey(7)}</td>
+                        <td>{notobjectgetcost(7)}</td>
                     </tr>
                 </tbody>
                 <tbody>
                     <tr>
                         <td>8th</td>
-                        <td>{keyarray[8]}</td>
-                        <td>{costarray[8]}</td>
+                        <td>{notobjectgetkey(8)}</td>
+                        <td>{notobjectgetcost(8)}</td>
                     </tr>
                 </tbody>
                 <tbody>
                     <tr>
                         <td>9th</td>
-                        <td>{keyarray[9]}</td>
-                        <td>{costarray[9]}</td>
+                        <td>{notobjectgetkey(9)}</td>
+                        <td>{notobjectgetcost(9)}</td>
                     </tr>
                 </tbody>
                 <tbody>
                     <tr>
                         <td>10th</td>
-                        <td>{keyarray[10]}</td>
-                        <td>{costarray[10]}</td>
+                        <td>{notobjectgetkey(10)}</td>
+                        <td>{notobjectgetcost(10)}</td>
                     </tr>
                 </tbody>
                 <tbody>
                     <tr>
                         <td>11th</td>
-                        <td>{keyarray[11]}</td>
-                        <td>{costarray[11]}</td>
+                        <td>{notobjectgetkey(11)}</td>
+                        <td>{notobjectgetcost(11)}</td>
                     </tr>
                 </tbody>
                 <tbody>
                     <tr>
                         <td>12th</td>
-                        <td>{keyarray[12]}</td>
-                        <td>{costarray[12]}</td>
+                        <td>{notobjectgetkey(11)}</td>
+                        <td>{notobjectgetcost(12)}</td>
                     </tr>
                 </tbody>
             </table>

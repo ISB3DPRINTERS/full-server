@@ -17,6 +17,8 @@
         "lsquo",
         "mainfunc",
         "manualfunc",
+        "notobjectgetcost",
+        "notobjectgetkey",
         "startcron",
         "supabase",
         "tailwindcss",
