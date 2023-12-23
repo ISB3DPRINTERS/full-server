@@ -1,15 +1,33 @@
+"use server"
 import getinfo from "../lib/getinfo"
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import supabase from "../lib/supabase";
+import supabase from "../lib/supabase.mjs";
 import Link from "next/link";
 import React from "react";
 
-export const getServerSideProps = (async () => {
-    var costarray = await getinfo.getcostarray
-    const keyarray = await getinfo.getkeyarray
-    return { props: { costarray,keyarray } }
-})
+export async function getServerSideProps() {
+    async function keyfinder (grade) {return (await supabase
+      .from('studentinfo')
+      .select()
+      .eq('grade', grade)
+      .single()
+        )}
+    const keys = [
+        await keyfinder(6),
+        await keyfinder(7),
+        await keyfinder(8),
+        await keyfinder(9),
+        await keyfinder(10),
+        await keyfinder(11),
+        await keyfinder(12)
+    ]
+    return {
+        props: {
+         keys
+        },
+      };
+  }
 
 
 const notobjectgetkey = (grade) => {
@@ -21,6 +39,11 @@ function notobjectgetcost(grade) {
 }
 
 export default function Dashboard() {
+
+   var [keyg6,keyg7,keyg8,keyg9,keyg10,keyg11,keyg12] = keys
+   var [costg6,costg7,costg8,costg9,costg10,costg11,costg12] = studentinfo.filament
+
+
     const [initials, setInitials] = useState("");
     const [grade, setGrade] = useState("");
     const [isLogin, setIsLogin] = useState(true);
@@ -50,7 +73,7 @@ export default function Dashboard() {
             console.log('submission was invalid')
         }
     }
-    
+
 
 
     return (
@@ -70,58 +93,58 @@ export default function Dashboard() {
             <table>
                 <tbody>
                     <tr>
-                        <th>Grade</th>
-                        <th>Daily PassKey</th>
+                        <th>Grade     | </th>
+                        <th>Daily PassKey      | </th>
                         <th>$ used (approx)</th>
                     </tr>   
                 </tbody>
                 <tbody>
                     <tr>
                         <td>6th</td>
-                        <td>{notobjectgetkey(6)}</td>
-                        <td>{notobjectgetcost(6)}</td>
+                        <td>{keyg6}</td>
+                        <td>{costg6}</td>
                     </tr>
                 </tbody>
-                <tbody>
+                 <tbody>
                     <tr>
                         <td>7th</td>
-                        <td>{notobjectgetkey(7)}</td>
-                        <td>{notobjectgetcost(7)}</td>
+                        <td>{keyg7}</td>
+                        <td>{costg7}</td>
                     </tr>
                 </tbody>
                 <tbody>
                     <tr>
                         <td>8th</td>
-                        <td>{notobjectgetkey(8)}</td>
-                        <td>{notobjectgetcost(8)}</td>
+                        <td>{keyg8}</td>
+                        <td>{costg9}</td>
                     </tr>
                 </tbody>
                 <tbody>
                     <tr>
                         <td>9th</td>
-                        <td>{notobjectgetkey(9)}</td>
-                        <td>{notobjectgetcost(9)}</td>
+                        <td>{keyg9}</td>
+                        <td>{costg9}</td>
                     </tr>
                 </tbody>
                 <tbody>
                     <tr>
                         <td>10th</td>
-                        <td>{notobjectgetkey(10)}</td>
-                        <td>{notobjectgetcost(10)}</td>
+                        <td>{keyg10}</td>
+                        <td>{costg10}</td>
                     </tr>
                 </tbody>
                 <tbody>
                     <tr>
                         <td>11th</td>
-                        <td>{notobjectgetkey(11)}</td>
-                        <td>{notobjectgetcost(11)}</td>
+                        <td>{keyg11}</td>
+                        <td>{costg11}</td>
                     </tr>
                 </tbody>
                 <tbody>
                     <tr>
                         <td>12th</td>
-                        <td>{notobjectgetkey(11)}</td>
-                        <td>{notobjectgetcost(12)}</td>
+                        <td>{keyg12}</td>
+                        <td>{costg12}</td>
                     </tr>
                 </tbody>
             </table>

@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import { fetchMovies } from "src/utils/react-query";
 import Image from "next/image";
-import supabase from "../lib/supabase";
+import supabase from "../lib/supabase.mjs";
 
 const MovieList = () => {
     const {

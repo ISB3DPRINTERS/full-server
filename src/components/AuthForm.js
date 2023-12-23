@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import supabase from "../lib/supabase";
+import supabase from "../lib/supabase.mjs";
 import Link from "next/link";
 
 export default function AuthForm() {

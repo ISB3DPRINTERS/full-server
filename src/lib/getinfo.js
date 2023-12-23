@@ -1,4 +1,4 @@
-import supabase from './supabase'
+import supabase from './supabase.mjs'
 
 
 const getcost = async (grade) => {
@@ -14,15 +14,15 @@ const getcost = async (grade) => {
 }
 
 const getcostarray = async () => {
-  var costarraytoreturn = await {
-    6: getcost(6),
-    7: getcost(7),
-    8: getcost(8),
-    9: getcost(9),
-    10: getcost(10),
-    11: getcost(11),
-    12: getcost(12)
-  }
+  var costarraytoreturn = await [
+    getcost(6),
+    getcost(7),
+    getcost(8),
+    getcost(9),
+    getcost(10),
+    getcost(11),
+    getcost(12)
+  ]
   return costarraytoreturn
 }
 
@@ -40,15 +40,15 @@ const getkey = async (grade) => {
 }
 
 const getkeyarray = async() => {
-  var keyarraytoreturn = await {
-    'g6': await getkey(6),
-    'g7': await getkey(7),
-    'g8': await getkey(8),
-    'g9': await getkey(9),
-    'g10': await getkey(10),
-    'g11': await getkey(11),
-    'g12': await getkey(12)
-  }
+  var keyarraytoreturn = await [
+    await getkey(6),
+    await getkey(7),
+    await getkey(8),
+    await getkey(9),
+    await getkey(10),
+    await getkey(11),
+    await getkey(12)
+  ]
   return keyarraytoreturn
 }
 
