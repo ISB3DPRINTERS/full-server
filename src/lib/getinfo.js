@@ -14,14 +14,14 @@ const getcost = async (grade) => {
 }
 
 const getcostarray = async () => {
-  var costarraytoreturn = await [
-    getcost(6),
-    getcost(7),
-    getcost(8),
-    getcost(9),
-    getcost(10),
-    getcost(11),
-    getcost(12)
+  var costarraytoreturn = [
+    await getcost(6),
+    await getcost(7),
+    await getcost(8),
+    await getcost(9),
+    await getcost(10),
+    await getcost(11),
+    await getcost(12)
   ]
   return costarraytoreturn
 }
@@ -36,11 +36,11 @@ const getkey = async (grade) => {
   if (error) {
     console.log('supabase error')
   }
-  return getkey.key
+  return await getkey.key
 }
 
-const getkeyarray = async() => {
-  var keyarraytoreturn = await [
+const getkeyarray = async(e) => {
+  var keyarraytoreturn = [
     await getkey(6),
     await getkey(7),
     await getkey(8),

@@ -7,24 +7,13 @@ import Link from "next/link";
 import React from "react";
 
 export async function getServerSideProps() {
-    async function keyfinder (grade) {return (await supabase
-      .from('studentinfo')
-      .select()
-      .eq('grade', grade)
-      .single()
-        )}
-    const keys = [
-        await keyfinder(6),
-        await keyfinder(7),
-        await keyfinder(8),
-        await keyfinder(9),
-        await keyfinder(10),
-        await keyfinder(11),
-        await keyfinder(12)
-    ]
+    const cost = await getinfo.getcostarray()
+    const keys = await getinfo.getkeyarray()
+
     return {
         props: {
-         keys
+         keys,
+         cost
         },
       };
   }
@@ -38,10 +27,10 @@ function notobjectgetcost(grade) {
     return 'e'
 }
 
-export default function Dashboard() {
+export default function Dashboard({keys, cost}) {
 
    var [keyg6,keyg7,keyg8,keyg9,keyg10,keyg11,keyg12] = keys
-   var [costg6,costg7,costg8,costg9,costg10,costg11,costg12] = studentinfo.filament
+   var [costg6,costg7,costg8,costg9,costg10,costg11,costg12] = cost
 
 
     const [initials, setInitials] = useState("");
@@ -181,6 +170,5 @@ export default function Dashboard() {
             </div>
             <br></br>
         </div>
-    );
+    ); 
 };
-
