@@ -1,5 +1,6 @@
 'use server';
 import Link from 'next/link';
+import React from 'react';
 
 export default function Page() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
