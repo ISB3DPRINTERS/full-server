@@ -1,0 +1,3 @@
+
+# Exclude node_modules folders at every level
+node_modules/

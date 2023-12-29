@@ -1,8 +1,8 @@
 export default function Custom500() {
-    return (
+  return (
     <div>
-        <h1>500 - Server-side error occurred</h1>
-        <p>My bad guys ._.</p>
+      <h1>500 - Server-side error occurred</h1>
+      <p>My bad guys ._.</p>
     </div>
-    )
-  }
+  );
+}

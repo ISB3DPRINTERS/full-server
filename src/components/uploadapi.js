@@ -1,4 +1,4 @@
-"use server";
+'use server';
 async function file(formData) {
-  const file = formData.get("file")
+  const file = formData.get('file');
 }

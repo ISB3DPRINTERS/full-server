@@ -1,17 +1,16 @@
-import supabase from './supabase.mjs'
-
+import supabase from './supabase.mjs';
 
 const getcost = async (grade) => {
   let { data: filament, error } = await supabase
     .from('studentinfo')
     .select()
     .eq('grade', grade)
-    .single()
+    .single();
   if (error) {
-    console.log('supabase error')
+    console.log('supabase error');
   }
-  return filament.filament
-}
+  return filament.filament;
+};
 
 const getcostarray = async () => {
   var costarraytoreturn = [
@@ -22,24 +21,23 @@ const getcostarray = async () => {
     await getcost(10),
     await getcost(11),
     await getcost(12)
-  ]
-  return costarraytoreturn
-}
-
+  ];
+  return costarraytoreturn;
+};
 
 const getkey = async (grade) => {
   let { data: getkey, error } = await supabase
     .from('studentinfo')
     .select()
     .eq('grade', grade)
-    .single()
+    .single();
   if (error) {
-    console.log('supabase error')
+    console.log('supabase error');
   }
-  return await getkey.key
-}
+  return await getkey.key;
+};
 
-const getkeyarray = async(e) => {
+const getkeyarray = async (e) => {
   var keyarraytoreturn = [
     await getkey(6),
     await getkey(7),
@@ -48,10 +46,9 @@ const getkeyarray = async(e) => {
     await getkey(10),
     await getkey(11),
     await getkey(12)
-  ]
-  return keyarraytoreturn
-}
+  ];
+  return keyarraytoreturn;
+};
 
-
-var getinforeturn = {getcostarray, getkeyarray}
-export default getinforeturn
+var getinforeturn = { getcostarray, getkeyarray };
+export default getinforeturn;
