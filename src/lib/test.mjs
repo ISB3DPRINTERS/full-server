@@ -13,7 +13,7 @@
 // limitations under the License.
 
 let user = {
-  name: 'Balaji',
+  name: 'John',
   age: 'e',
   greet: () => 'e'
 };

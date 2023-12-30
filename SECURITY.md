@@ -7,4 +7,4 @@ Any desired fixes can be requested in issues or submitted in a PR that may or ma
 
 ## Reporting a Vulnerability
 
-Either email me at ravinder-Olivier@outlook.com or sybmit an issue.
+Either email me at ravinder-Olivier@outlook.com or submit an issue.
