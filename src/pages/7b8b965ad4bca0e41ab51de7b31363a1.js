@@ -32,14 +32,6 @@ export async function getServerSideProps() {
   };
 }
 
-const notobjectgetkey = (grade) => {
-  return keyarray[grade];
-};
-
-function notobjectgetcost(grade) {
-  return 'e';
-}
-
 export default function Dashboard({ keys, cost }) {
   var [keyg6, keyg7, keyg8, keyg9, keyg10, keyg11, keyg12] = keys;
   var [costg6, costg7, costg8, costg9, costg10, costg11, costg12] = cost;
@@ -62,22 +54,29 @@ export default function Dashboard({ keys, cost }) {
     }
   }, [router]);
 
-  const onReset = async () => {
-    async function sendtoreset(gradetoreset) {
-      console.log(gradetoreset);
+  const submitData = async (toreset) => {
+    e.preventDefault();
+    try {
+      const body = { grade };
+      await fetch('/api/newinfo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+    } catch (error) {
+      console.error(error);
     }
+  };
+
+  const onReset = async () => {
     if (typeof grade == 'number') {
       console.log('submission was a number');
-      await sendtoreset(grade);
+      var toreset = grade;
+      await submitData(toreset);
     } else if (grade == 'all') {
       console.log('submission was all');
-      await sendtoreset(6);
-      await sendtoreset(7);
-      await sendtoreset(8);
-      await sendtoreset(9);
-      await sendtoreset(10);
-      await sendtoreset(11);
-      await sendtoreset(12);
+      var toreset = 'all';
+      await submitData(toreset);
     } else {
       console.log('submission was invalid');
     }

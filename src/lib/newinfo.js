@@ -13,6 +13,12 @@
 // limitations under the License.
 
 import supabase from './supabase.mjs';
+export const numbergenerator = () => {
+  return (
+    (Math.random() + 1).toString(36).substring(5) +
+    (Math.random() + 1).toString(36).substring(5)
+  );
+};
 
 export const changekey = async (grade, newinfo) => {
   let { data: info, error } = await supabase
@@ -21,5 +27,18 @@ export const changekey = async (grade, newinfo) => {
     .eq('grade', grade);
   if (error) {
     console.log('supabase error');
+  }
+};
+export const keychanger = async (grade) => {
+  let data = await changekey(grade, numbergenerator());
+  if (data.status == 204) {
+    return 204;
+  } else {
+    let data2 = await changekey(grade, numbergenerator());
+    if (data2.status == 204) {
+      return 204;
+    } else {
+      return 400;
+    }
   }
 };

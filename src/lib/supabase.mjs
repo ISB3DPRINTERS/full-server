@@ -13,10 +13,8 @@
 // limitations under the License.
 
 import { createClient } from '@supabase/supabase-js';
-
-const supabase = createClient(
-  NEXT_PUBLIC_SUPABASE_URL,
-  NEXT_PUBLIC_SUPABASE_ANNON_KEY
-);
+const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const key = process.env.NEXT_PUBLIC_SUPABASE_ANNON_KEY;
+const supabase = createClient(url, key);
 
 export default supabase;
