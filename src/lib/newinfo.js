@@ -12,25 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// DEPRECATED
+import supabase from './supabase.mjs';
 
-import { writeFile } from 'fs/promises';
-import { NextRequest, NextResponse } from 'next/server';
-
-export async function POST(request) {
-  const data = await request.formData();
-  const file = data.get('file');
-
-  if (!file) {
-    return NextResponse.json({ success });
+export const changekey = async (grade, newinfo) => {
+  let { data: info, error } = await supabase
+    .from('studentinfo')
+    .update({ key: newinfo })
+    .eq('grade', grade);
+  if (error) {
+    console.log('supabase error');
   }
-
-  const bytes = await file.arrayBuffer();
-  const buffer = Buffer.from(bytes);
-
-  const path = `/tmp/${file.name}`;
-  await writeFile(path, buffer);
-  console.log(`open ${path} to see the uploaded file`);
-
-  return NextResponse.json({ success });
-}
+};

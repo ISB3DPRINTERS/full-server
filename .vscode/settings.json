@@ -1,8 +1,10 @@
 {
   "cSpell.words": [
+    "ANNON",
     "apos",
     "async",
     "avalibility",
+    "changekey",
     "codepaths",
     "costarray",
     "costarraytoreturn",
@@ -20,12 +22,14 @@
     "lsquo",
     "mainfunc",
     "manualfunc",
+    "newinfo",
     "notobjectgetcost",
     "notobjectgetkey",
     "Parens",
     "startcron",
     "studentinfo",
     "supabase",
+    "SUPABASE_ANNO",
     "tailwindcss",
     "tsbuildinfo",
     "uploadapi"

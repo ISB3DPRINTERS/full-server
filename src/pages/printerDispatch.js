@@ -19,10 +19,10 @@ import React from 'react';
 
 export default function Page() {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-  const printer1 = baseUrl+':8001';
-  const printer2 = baseUrl+':8002'
-  const printer3 = baseUrl+':8003'
-  const printer4 = baseUrl+':8004'
+  const printer1 = baseUrl + ':8001';
+  const printer2 = baseUrl + ':8002';
+  const printer3 = baseUrl + ':8003';
+  const printer4 = baseUrl + ':8004';
   return (
     <div>
       <div className="flex p-2 px-4 text-xl bg-black text-white font-bold justify-between">
