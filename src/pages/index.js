@@ -22,28 +22,28 @@ export default function Home() {
         Main Page
       </div>
 
-      <div className="flex justify-center p-4">
+      <div class="flex justify-center p-4">
         <div>
-          <div className="w-full" style={{ textAlign: 'center' }}>
+          <div class="w-full" style={{ textAlign: 'center' }}>
             ISB3DPRINTERS Project Main Page
           </div>
-          <div className="text-sm">
-            <h1 className="text-xl font-bold mt-2">Pages</h1>
-            <span className="font-bold">
-              <Link href="/slicer" className="hover:text-purple-400">
+          <div class="text-sm">
+            <h1 class="text-xl font-bold mt-2">Pages</h1>
+            <span class="font-bold">
+              <Link href="/slicer" class="hover:text-purple-400">
                 Slicer:
               </Link>
             </span>{' '}
             Turn your models into code (gcode) that the printer can understand{' '}
             <br />
-            <span className="font-bold">
-              <Link href="/printerDispatch" className="hover:text-purple-400">
+            <span class="font-bold">
+              <Link href="/printerDispatch" class="hover:text-purple-400">
                 Printer Dispatch:
               </Link>
             </span>{' '}
             Send that prepared (gcode) to the printer to print <br />
-            <span className="font-bold">
-              <Link href="/auth" className="hover:text-purple-400">
+            <span class="font-bold">
+              <Link href="/auth" class="hover:text-purple-400">
                 Teachers Console:
               </Link>
             </span>{' '}
@@ -51,7 +51,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center text-2xl">
+      <div class="flex justify-center text-2xl">
         <Link href="/help" className="hover:text-purple-400">
           Help
         </Link>

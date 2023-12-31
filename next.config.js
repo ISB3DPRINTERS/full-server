@@ -19,6 +19,7 @@ const nextConfig = {
   },
   experimental: {
     serverActions: true
-  }
+  },
+  basepath: ''
 };
 module.exports = nextConfig;

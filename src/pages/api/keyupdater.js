@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 import newinfo from '../../lib/newinfo.js';
-import type { NextApiRequest, NextApiResponse } from 'next';
-import type { Readable } from 'node:stream';
 
 export default function handler(req, res) {
   if (req.method !== 'POST') {

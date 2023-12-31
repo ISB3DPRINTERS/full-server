@@ -25,8 +25,8 @@ export default function Page() {
   const printer4 = baseUrl + ':8004';
   return (
     <div>
-      <div className="flex p-2 px-4 text-xl bg-black text-white font-bold justify-between">
-        <Link href="/" className="hover:text-purple-400">
+      <div class="flex p-2 px-4 text-xl bg-black text-white font-bold justify-between">
+        <Link href="/" class="hover:text-purple-400">
           ISB3DPRINTERS: Printer Dispatch
         </Link>
       </div>
