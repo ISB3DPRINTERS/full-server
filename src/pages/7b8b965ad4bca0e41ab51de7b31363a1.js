@@ -83,10 +83,7 @@ export default function Dashboard({ keys, cost }) {
   };
 
   return (
-    <div
-      class="font-serif"
-      className="bg-neutral-950 text-white background-color:rgb(10 10 10);"
-    >
+    <div className="font-serif bg-neutral-950 text-white background-color:rgb(10 10 10);">
       <div className="flex p-2 px-4 text-xl bg-black text-white font-bold justify-between">
         <Link href="/" className="hover:text-black-400">
           ISB3DPRINTERS: Teachers&apos; Console
@@ -98,97 +95,97 @@ export default function Dashboard({ keys, cost }) {
           Sign Out
         </button>
       </div>
-      <div class="max-w-sm mx-auto">
+      <div className="max-w-sm mx-auto">
         <strong>WARNING: Never give students access to this page</strong>
         <br></br>
         <br></br>
-        <h2 class="text-4xl font-extrabold dark:text-white">Info Table</h2>
+        <h2 className="text-4xl font-extrabold dark:text-white">Info Table</h2>
 
-        <div class="relative overflow-x-auto">
-          <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+        <div className="relative overflow-x-auto">
+          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
               <tr>
-                <th scope="col" class="px-6 py-3 rounded-s-lg">
+                <th scope="col" className="px-6 py-3 rounded-s-lg">
                   Grade
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" className="px-6 py-3">
                   Daily Key
                 </th>
-                <th scope="col" class="px-6 py-3 rounded-e-lg">
+                <th scope="col" className="px-6 py-3 rounded-e-lg">
                   Price
                 </th>
               </tr>
             </thead>
             <tbody>
-              <tr class="bg-white dark:bg-gray-800">
+              <tr className="bg-white dark:bg-gray-800">
                 <th
                   scope="row"
-                  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
                   6
                 </th>
-                <td class="px-6 py-4">{keyg6}</td>
-                <td class="px-6 py-4">{costg6}</td>
+                <td className="px-6 py-4">{keyg6}</td>
+                <td className="px-6 py-4">{costg6}</td>
               </tr>
-              <tr class="bg-white dark:bg-gray-800">
+              <tr className="bg-white dark:bg-gray-800">
                 <th
                   scope="row"
-                  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
                   7
                 </th>
-                <td class="px-6 py-4">{keyg7}</td>
-                <td class="px-6 py-4">{costg7}</td>
+                <td className="px-6 py-4">{keyg7}</td>
+                <td className="px-6 py-4">{costg7}</td>
               </tr>
-              <tr class="bg-white dark:bg-gray-800">
+              <tr className="bg-white dark:bg-gray-800">
                 <th
                   scope="row"
-                  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
                   8
                 </th>
-                <td class="px-6 py-4">{keyg8}</td>
-                <td class="px-6 py-4">{costg8}</td>
+                <td className="px-6 py-4">{keyg8}</td>
+                <td className="px-6 py-4">{costg8}</td>
               </tr>
-              <tr class="bg-white dark:bg-gray-800">
+              <tr className="bg-white dark:bg-gray-800">
                 <th
                   scope="row"
-                  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
                   9
                 </th>
-                <td class="px-6 py-4">{keyg9}</td>
-                <td class="px-6 py-4">{costg9}</td>
+                <td className="px-6 py-4">{keyg9}</td>
+                <td className="px-6 py-4">{costg9}</td>
               </tr>
-              <tr class="bg-white dark:bg-gray-800">
+              <tr className="bg-white dark:bg-gray-800">
                 <th
                   scope="row"
-                  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
                   10
                 </th>
-                <td class="px-6 py-4">{keyg10}</td>
-                <td class="px-6 py-4">{costg10}</td>
+                <td className="px-6 py-4">{keyg10}</td>
+                <td className="px-6 py-4">{costg10}</td>
               </tr>
-              <tr class="bg-white dark:bg-gray-800">
+              <tr className="bg-white dark:bg-gray-800">
                 <th
                   scope="row"
-                  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
                   11
                 </th>
-                <td class="px-6 py-4">{keyg11}</td>
-                <td class="px-6 py-4">{costg11}</td>
+                <td className="px-6 py-4">{keyg11}</td>
+                <td className="px-6 py-4">{costg11}</td>
               </tr>
               <tr class="bg-white dark:bg-gray-800">
                 <th
                   scope="row"
-                  class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
                   12
                 </th>
-                <td class="px-6 py-4">{keyg12}</td>
-                <td class="px-6 py-4">{costg12}</td>
+                <td className="px-6 py-4">{keyg12}</td>
+                <td className="px-6 py-4">{costg12}</td>
               </tr>
             </tbody>
           </table>
@@ -196,14 +193,16 @@ export default function Dashboard({ keys, cost }) {
 
         <br></br>
         <br></br>
-        <h2 class="text-4xl font-extrabold dark:text-white">Reset Passkeys</h2>
+        <h2 className="text-4xl font-extrabold dark:text-white">
+          Reset Passkeys
+        </h2>
       </div>
       <div className="auth-form-container">
-        <form class="max-w-sm mx-auto" onSubmit={onReset}>
-          <div class="mb-5">
+        <form className="max-w-sm mx-auto" onSubmit={onReset}>
+          <div className="mb-5">
             <label
               for="text"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Your Initials
             </label>
@@ -214,13 +213,13 @@ export default function Dashboard({ keys, cost }) {
               value={initials}
               required={true}
               onChange={(e) => setInitials(e.target.value)}
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             />
           </div>
-          <div class="mb-5">
+          <div className="mb-5">
             <label
               for="text"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Your Initials
             </label>
@@ -231,12 +230,12 @@ export default function Dashboard({ keys, cost }) {
               value={grade}
               required={true}
               onChange={(e) => setGrade(e.target.value)}
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             />
           </div>
           <button
             type="submit"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Submit
           </button>

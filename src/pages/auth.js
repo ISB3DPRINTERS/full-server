@@ -16,6 +16,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import AuthForm from '../components/AuthForm';
 import supabase from '../lib/supabase.mjs';
+import React from 'react';
 
 export default function Auth() {
   const router = useRouter();
