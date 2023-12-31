@@ -57,7 +57,7 @@ export default function Dashboard({ keys, cost }) {
   const submitData = async (toreset) => {
     e.preventDefault();
     try {
-      const body = { grade };
+      const body = { grade: toreset };
       await fetch('/api/newinfo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -177,7 +177,7 @@ export default function Dashboard({ keys, cost }) {
                 <td className="px-6 py-4">{keyg11}</td>
                 <td className="px-6 py-4">{costg11}</td>
               </tr>
-              <tr class="bg-white dark:bg-gray-800">
+              <tr className="bg-white dark:bg-gray-800">
                 <th
                   scope="row"
                   className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
@@ -221,7 +221,7 @@ export default function Dashboard({ keys, cost }) {
               for="text"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
-              Your Initials
+              Grade
             </label>
             <input
               className="inputField"
