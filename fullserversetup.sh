@@ -1,6 +1,6 @@
 #! /bin/bash
 
-echo "Copyright 2023 Ravinder Olivier Singh Dadiala"
+echo " Copyright 2023 Ravinder Olivier Singh Dadiala"
 echo ""
 echo " Licensed under the Apache License, Version 2.0 (the "License");"
 echo " you may not use this file except in compliance with the License."
@@ -24,21 +24,22 @@ echo "  - Build the Project"
 echo "  - Install and Setup Docker"
 echo "  - Create the Octoprint Docker Databases"
 echo "  - Start everything up"
-read -p "Press y/n to continue" initialprompt
-if [initialprompt = 'y']; then
-    echo "Continuing"
-else
-    echo "Exiting"
-    exit 1
-fi
-echo "Checking for Directory"
-if [ -d "full-server" ]; then
-    echo "Full-server Directory Found"
-else
-    echo "Full-server Directory Not Found"
-    echo "Please make sure you are running this script from the root of the project"
-    exit 1
-fi
+sleep 1
+while true; do
+
+read -p "Do you want to proceed? (y/n) " yn
+
+case $yn in 
+	[yY] ) echo Continuing;
+		break;;
+	[nN] ) echo exiting...;
+		exit;;
+	* ) echo invalid response;;
+esac
+
+done
+
+echo Starting...
 echo "Checking for NodeJS"
 if [ -x "$(command -v node)" ]; then
     echo "NodeJS Found"
@@ -81,4 +82,33 @@ else
 fi
 echo "Installing NPM Modules"
 npm install 
-echo "Cryptographying the path to the admin console"
+echo "======================================================================="
+echo "USER INTERACTION REQUIRED"
+echo "======================================================================="
+echo "Please enter the following information to setup the admin console"
+echo "======================================================================="
+echo "Please provide your Supabase URL"
+read supabaseurl
+echo "Please provide your Supabase Annon Key"
+read supabaseannonkey
+echo "Please provide an email for the maintainer of this server"
+read maintaineremail
+echo "Please provide a name for the maintainer of this server"
+read maintainername
+echo "Please provide the two letter country code of this server"
+read countrycode
+echo "Do you agree with the terms and conditions provided at:"
+echo "https://raw.githubusercontent.com/ISB3DPRINTERS/full-server/master/src/pages/privacypolicy.js"
+while true; do
+
+read -p "Do you want to proceed? (y/n) " yn
+
+case $yn in 
+	[yY] ) echo Continuing;
+		break;;
+	[nN] ) echo exiting...;
+		exit;;
+	* ) echo invalid response;;
+esac
+
+done

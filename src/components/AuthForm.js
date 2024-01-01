@@ -17,6 +17,7 @@ import { useRouter } from 'next/router';
 import supabase from '../lib/supabase.mjs';
 import Link from 'next/link';
 import React from 'react';
+import consoledir from './variables.js'
 
 export default function AuthForm() {
   const [email, setEmail] = useState('');
@@ -27,7 +28,7 @@ export default function AuthForm() {
   useEffect(() => {
     const { user } = supabase.auth.getSession();
     if (user) {
-      router.push('/7b8b965ad4bca0e41ab51de7b31363a1');
+      router.push(consoledir);
     }
   }, [router]);
 
@@ -40,7 +41,7 @@ export default function AuthForm() {
     if (error) {
       console.error('Error:', error.message);
     } else if (user || !error) {
-      router.push('/7b8b965ad4bca0e41ab51de7b31363a1');
+      router.push(consoledir);
     }
   };
 
