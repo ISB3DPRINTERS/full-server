@@ -17,7 +17,7 @@ import { useRouter } from 'next/router';
 import supabase from '../lib/supabase.mjs';
 import Link from 'next/link';
 import React from 'react';
-import consoledir from './variables.js'
+import consoledir from './variables.js';
 
 export default function AuthForm() {
   const [email, setEmail] = useState('');

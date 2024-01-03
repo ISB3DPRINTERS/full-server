@@ -38,7 +38,6 @@ case $yn in
 esac
 
 done
-
 echo Starting...
 echo "Checking for NodeJS"
 if [ -x "$(command -v node)" ]; then
@@ -112,3 +111,13 @@ case $yn in
 esac
 
 done
+echo "======================================================================="
+echo "Setting up Variables"
+file="/src/components/variables.js"
+echo "export const supabaseurl = '$supabaseurl';" > $file
+echo "export const supabaseannonkey = '$supabaseannonkey';" >> $file
+echo "export const maintaineremail = '$maintaineremail';" >> $file
+echo "export const maintainername = '$maintainername';" >> $file
+echo "export const countrycode = '$countrycode';" >> $file
+
+echo $path

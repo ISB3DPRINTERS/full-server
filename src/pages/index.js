@@ -30,20 +30,29 @@ export default function Home() {
           <div className="text-sm">
             <h1 className="text-xl font-bold mt-2">Pages</h1>
             <span className="font-bold">
-              <Link href="/slicer" className="hover:underline hover:text-purple-400">
+              <Link
+                href="/slicer"
+                className="hover:underline hover:text-purple-400"
+              >
                 Slicer:
               </Link>
             </span>{' '}
             Turn your models into code (gcode) that the printer can understand{' '}
             <br />
             <span className="font-bold">
-              <Link href="/printerDispatch" className="hover:underline hover:text-purple-400">
+              <Link
+                href="/printerDispatch"
+                className="hover:underline hover:text-purple-400"
+              >
                 Printer Dispatch:
               </Link>
             </span>{' '}
             Send that prepared (gcode) to the printer to print <br />
             <span className="font-bold">
-              <Link href="/auth" className="hover:underline hover:text-purple-400">
+              <Link
+                href="/auth"
+                className="hover:underline hover:text-purple-400"
+              >
                 Teachers Console:
               </Link>
             </span>{' '}
