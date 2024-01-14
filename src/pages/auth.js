@@ -24,7 +24,7 @@ export default function Auth() {
   useEffect(() => {
     const { user } = supabase.auth.getSession();
     if (user) {
-      router.push('/7b8b965ad4bca0e41ab51de7b31363a1');
+      router.push('/console');
     }
   }, [router]);
 

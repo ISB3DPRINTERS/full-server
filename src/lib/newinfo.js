@@ -14,10 +14,7 @@
 
 import supabase from './supabase.mjs';
 export const numbergenerator = () => {
-  return (
-    (Math.random() + 1).toString(36).substring(5) +
-    (Math.random() + 1).toString(36).substring(5)
-  );
+  return Math.random().toString(36).slice(2);
 };
 
 export const changekey = async (grade, newinfo) => {
@@ -30,15 +27,5 @@ export const changekey = async (grade, newinfo) => {
   }
 };
 export const keychanger = async (grade) => {
-  let data = await changekey(grade, numbergenerator());
-  if (data.status == 204) {
-    return 204;
-  } else {
-    let data2 = await changekey(grade, numbergenerator());
-    if (data2.status == 204) {
-      return 204;
-    } else {
-      return 400;
-    }
-  }
+  await changekey(grade, numbergenerator());
 };

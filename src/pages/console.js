@@ -55,7 +55,7 @@ export default function Dashboard({ keys, cost }) {
   }, [router]);
 
   const submitData = async (toreset) => {
-    e.preventDefault();
+    console.log(toreset);
     try {
       const body = { grade: toreset };
       await fetch('/api/newinfo', {
@@ -69,14 +69,30 @@ export default function Dashboard({ keys, cost }) {
   };
 
   const onReset = async () => {
-    if (typeof grade == 'number') {
-      console.log('submission was a number');
-      var toreset = grade;
-      await submitData(toreset);
-    } else if (grade == 'all') {
-      console.log('submission was all');
-      var toreset = 'all';
-      await submitData(toreset);
+    if (typeof grade === 'string') {
+      if (grade === '6') {
+        submitData(6);
+      } else if (grade === '7') {
+        submitData(7);
+      } else if (grade === '8') {
+        submitData(8);
+      } else if (grade === '9') {
+        submitData(9);
+      } else if (grade === '10') {
+        submitData(10);
+      } else if (grade === '11') {
+        submitData(11);
+      } else if (grade === '12') {
+        submitData(12);
+      } else if (grade === 'ALL') {
+        submitData(13);
+      } else if (grade === 'all') {
+        submitData(13);
+      } else if (grade === 'All') {
+        submitData(13);
+      } else {
+        console.log('submission was invalid');
+      }
     } else {
       console.log('submission was invalid');
     }
