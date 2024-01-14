@@ -13,3 +13,4 @@
 // limitations under the License.
 
 console.log('used during development');
+import { createClient } from '@supabase/supabase-js';

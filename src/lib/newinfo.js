@@ -13,11 +13,12 @@
 // limitations under the License.
 
 import supabase from './supabase.mjs';
-export const numbergenerator = () => {
+
+const numbergenerator = () => {
   return Math.random().toString(36).slice(2);
 };
 
-export const changekey = async (grade, newinfo) => {
+const supabaseChanger = async (grade, newinfo) => {
   let { data: info, error } = await supabase
     .from('studentinfo')
     .update({ key: newinfo })
@@ -26,6 +27,35 @@ export const changekey = async (grade, newinfo) => {
     console.log('supabase error');
   }
 };
+const getPrinterKey = async (printer, grade) => {
+  var identifier = parseFloat(printer + '.' + grade);
+  console.log(identifier);
+  console.log(identifier);
+
+  let { data: getkey, error } = await supabase
+    .from('printerinfo')
+    .select()
+    .eq('id', identifier)
+    .single();
+  if (error) {
+    console.log('supabase error');
+  }
+  return getkey.apikey;
+};
+
+const printerChanger = async (grade, newinfo) => {
+  try {
+    const body = { grade: toreset };
+    await fetch(printerUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const keychanger = async (grade) => {
-  await changekey(grade, numbergenerator());
+  await supabaseChanger(grade, numbergenerator());
 };
