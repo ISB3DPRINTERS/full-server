@@ -18,17 +18,24 @@ const supabase = createClient(
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNlcnZrc3lkYXZzb25hbnRucG94Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTM4NzQ2NjYsImV4cCI6MjAwOTQ1MDY2Nn0.nzbHw3XU4qVouLYJRW0yuVNt89qNESX4tV8m606dd_A'
 );
 
-const printer = 1;
-var identifier = parseFloat(printer);
-console.log(identifier);
-console.log(identifier);
+const grade = 7
+const portfinder = (printer) => {
+    if (printer == 1) {
+      return '5100';
+    } else if (printer == 2) {
+      return '5200';
+    } else if (printer == 3) {
+      return '5300';
+    } else if (printer == 4) {
+      return '5400';
+    }
+  };
+// eslint-disable-next-line prettier/prettier
+    var urltobereturned =
+  'http://127.0.0.1:' +
+  portfinder(4) +
+  '/api/access/users/grade' +
+  grade +
+  '/password';
 
-let { data: getkey, error } = await supabase
-  .from('printerinfo')
-  .select()
-  .eq('id', identifier)
-  .single();
-if (error) {
-  console.log('supabase error');
-}
-console.log(getkey.apikey);
+console.log(urltobereturned);

@@ -80,7 +80,7 @@ const printerrequester = (grade, printer) => {
   console.log(passwordtoupdate);
   console.log(headers);
   axios
-    .put(urltobereturned(grade, printer), passwordtoupdate, {
+    .put(urlfinder(grade, printer), passwordtoupdate, {
       headers
     })
     .then(async (response) => {
