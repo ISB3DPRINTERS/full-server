@@ -32,14 +32,16 @@ const supabaseChanger = async (grade, newinfo) => {
   }
 };
 const portfinder = (printer) => {
-  if (printer == 1) {
+  if (printer === 1) {
     return '5100';
-  } else if (printer == 2) {
+  } else if (printer === 2) {
     return '5200';
-  } else if (printer == 3) {
+  } else if (printer === 3) {
     return '5300';
-  } else if (printer == 4) {
+  } else if (printer === 4) {
     return '5400';
+  } else {
+    return 404
   }
 };
 const urlfinder = (grade, printer) => {
