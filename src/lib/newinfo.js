@@ -43,12 +43,8 @@ const portfinder = (printer) => {
   }
 }
 const urlfinder = (grade, printer) => {
-  var urltobereturned =
-    'http://127.0.0.1:' +
-    portfinder(printer) +
-    '/api/access/users/grade' +
-    grade +
-    '/password';
+  // eslint-disable-next-line prettier/prettier
+  var urltobereturned = ('http://127.0.0.1:' + portfinder(printer) + '/api/access/users/grade' + grade + '/password')
 
   return urltobereturned;
 };
