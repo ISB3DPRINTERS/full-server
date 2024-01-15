@@ -12,5 +12,4 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-console.log('used during development');
 import { createClient } from '@supabase/supabase-js';

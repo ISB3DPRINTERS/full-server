@@ -31,17 +31,24 @@
     "notobjectgetkey",
     "numbergenerator",
     "Parens",
+    "passwordtoupdate",
+    "porttobereturned",
     "printerinfo",
+    "printerrequester",
+    "printerupdater",
     "privacypolicy",
     "sendtoreset",
     "startcron",
     "studentinfo",
     "supabase",
     "SUPABASE_ANNO",
+    "Supabaseupdater",
+    "suparesponse",
     "tailwindcss",
     "tochange",
     "toreset",
     "tsbuildinfo",
-    "uploadapi"
+    "uploadapi",
+    "urltobereturned"
   ]
 }
