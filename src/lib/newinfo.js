@@ -32,31 +32,7 @@ const supabaseChanger = async (grade, newinfo) => {
   }
 };
 const portfinder = (printer) => {
-  if (typeof printer == 'string') {
-    if (parseInt(printer) === 1) {
-      return '5100';
-    } else if (parseInt(printer) === 2) {
-      return '5200';
-    } else if (parseInt(printer) === 3) {
-      return '5300';
-    } else if (parseInt(printer) === 4) {
-      return '5400';
-    } else {
-      return 404;
-    }
-  } else {
-    if (printer === 1) {
-      return '5100';
-    } else if (printer === 2) {
-      return '5200';
-    } else if (printer === 3) {
-      return '5300';
-    } else if (printer === 4) {
-      return '5400';
-    } else {
-      return 404;
-    }
-  }
+  return '5100';
 };
 const urlfinder = (grade, printer) => {
   // eslint-disable-next-line prettier/prettier
