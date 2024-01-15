@@ -103,7 +103,7 @@ const printerrequester = (grade, printer) => {
     .catch((error) => console.error(error));
 };
 
-export default printerupdater = async (grade, printer) => {
+const printerupdater = async (grade, printer) => {
   if ((await printerrequester(1)) == 200) {
     console.log('printer1 updated correctly');
   } else {
@@ -129,3 +129,4 @@ export default printerupdater = async (grade, printer) => {
     await printerrequester(4);
   }
 };
+export default printerupdater;
