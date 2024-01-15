@@ -31,20 +31,21 @@ const supabaseChanger = async (grade, newinfo) => {
     return 200;
   }
 };
-
-const urlfinder = (grade, printer) => {
-  if (printer == 1) {
-    var porttobereturned = 5100;
+const portfinder = (printer) => {
+   if (printer == 1) {
+    return '5100';
   } else if (printer == 2) {
-    var porttobereturned = 5200;
+    return '5200';
   } else if (printer == 3) {
-    var porttobereturned = 5300;
+    return '5300';
   } else if (printer == 4) {
-    var porttobereturned = 5400;
+    return '5400';
   }
+}
+const urlfinder = (grade, printer) => {
   var urltobereturned =
     'http://127.0.0.1:' +
-    porttobereturned +
+    portfinder(printer) +
     '/api/access/users/grade' +
     grade +
     '/password';
