@@ -32,7 +32,7 @@ const supabaseChanger = async (grade, newinfo) => {
   }
 };
 const portfinder = (printer) => {
-   if (printer == 1) {
+  if (printer == 1) {
     return '5100';
   } else if (printer == 2) {
     return '5200';
@@ -41,16 +41,22 @@ const portfinder = (printer) => {
   } else if (printer == 4) {
     return '5400';
   }
-}
+};
 const urlfinder = (grade, printer) => {
   // eslint-disable-next-line prettier/prettier
-  var urltobereturned = ('http://127.0.0.1:' + portfinder(printer) + '/api/access/users/grade' + grade + '/password')
+  var urltobereturned =
+    'http://127.0.0.1:' +
+    portfinder(printer) +
+    '/api/access/users/grade' +
+    grade +
+    '/password';
 
   return urltobereturned;
 };
 
 const getPrinterKey = async (grade, printer) => {
-  var identifier = parseFloat(printer + '.' + grade);
+  var printer = 1;
+  var identifier = parseFloat(printer);
   console.log(identifier);
   console.log(identifier);
 
