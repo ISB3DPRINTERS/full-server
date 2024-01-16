@@ -16,6 +16,7 @@
 
 // TESTED WORKS
 const portfinder = (printer) => {
+  console.log('PORTFINDER GOT ' + printer);
   if (printer == 1) {
     return '5100';
   }
@@ -34,6 +35,7 @@ const portfinder = (printer) => {
 
 // TESTED WORKS
 export const urlfinder = (grade, printer) => {
+  console.log('URL FINDER GOT PRINTER ' + printer + ' AND GRADE ' + grade);
   // eslint-disable-next-line prettier/prettier
   var urltobereturned =
     'http://127.0.0.1:' +

@@ -16,6 +16,7 @@ import supabase from '../supabase.mjs';
 
 // TESTED WORKS
 export const supabaseChanger = async (grade, newinfo) => {
+  console.log('SUPABASECHANGER GOT grade ' + grade + '   newinfo:' + newinfo);
   let { data: info, error } = await supabase
     .from('studentinfo')
     .update({ key: newinfo })

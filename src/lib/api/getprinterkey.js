@@ -12,9 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import { printers } from 'prettier-plugin-tailwindcss';
 import supabase from '../supabase.mjs';
 
 export const getPrinterKey = async (printer) => {
+  console.log('GETPRINTER KEY GOT '+printer)
   var printer = 1;
   var identifier = parseFloat(printer);
   let { data: getkey, error } = await supabase
