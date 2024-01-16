@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// TESTED WORKS
 export const numbergenerator = () => {
   return Math.random().toString(36).slice(2);
 };

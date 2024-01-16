@@ -16,23 +16,8 @@ import supabase from './supabase.mjs';
 import axios from 'axios';
 import { numbergenerator } from './api/numbergenerator.js';
 import { urlfinder } from './api/urlfinder.js';
-import ( supabasechanger ) from './api/supabasechanger.js'
-const getPrinterKey = async (grade, printer) => {
-  var printer = 1;
-  var identifier = parseFloat(printer);
-  console.log(identifier);
-  console.log(identifier);
-
-  let { data: getkey, error } = await supabase
-    .from('printerinfo')
-    .select()
-    .eq('id', identifier)
-    .single();
-  if (error) {
-    console.log('supabase error');
-  }
-  return getkey.apikey;
-};
+import { supabasechanger } from './api/supabasechanger.js';
+import { getPrinterKey } from './api/getprinterkey.js';
 
 const printerrequester = (grade, printer) => {
   var passwordtoupdate = { password: numbergenerator() };
@@ -48,15 +33,15 @@ const printerrequester = (grade, printer) => {
     })
     .then(async (response) => {
       if (response.status == 200) {
-        var suparesponse = await supabaseChanger(grade, passwordtoupdate);
+        var suparesponse = await supabasechanger(grade, passwordtoupdate);
         if (suparesponse == 200) {
           return 200;
         } else {
-          var suparesponse1 = await supabaseChanger(grade, passwordtoupdate);
+          var suparesponse1 = await supabasechanger(grade, passwordtoupdate);
           if (suparesponse1 == 200) {
             return 200;
           } else {
-            var suparesponse2 = await supabaseChanger(grade, passwordtoupdate);
+            var suparesponse2 = await supabasechanger(grade, passwordtoupdate);
             if (suparesponse2 == 200) {
               return 200;
             } else {

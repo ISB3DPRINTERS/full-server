@@ -12,6 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import supabase from '../supabase.mjs';
+
+// TESTED WORKS
 export const supabaseChanger = async (grade, newinfo) => {
   let { data: info, error } = await supabase
     .from('studentinfo')

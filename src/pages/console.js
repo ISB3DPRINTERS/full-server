@@ -217,7 +217,7 @@ export default function Dashboard({ keys, cost }) {
         <form className="max-w-sm mx-auto" onSubmit={onReset}>
           <div className="mb-5">
             <label
-              for="text"
+              htmlFor="text"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Your Initials

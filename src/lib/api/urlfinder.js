@@ -12,24 +12,35 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Not sure why but BOTH TESTED WORKS
+
+// TESTED WORKS
 const portfinder = (printer) => {
   if (printer == 1) {
     return '5100';
-  } else if (printer == 2) {
+  }
+  if (printer == 2) {
     return '5200';
-  } else if (printer == 3) {
+  }
+  if (printer == 3) {
     return '5300';
-  } else if (printer == 4) {
+  }
+  if (printer == 4) {
     return '5400';
   } else {
     return 404;
   }
 };
 
+// TESTED WORKS
 export const urlfinder = (grade, printer) => {
   // eslint-disable-next-line prettier/prettier
   var urltobereturned =
-    'http://127.0.0.1:5100/api/access/users/grade7/password';
+    'http://127.0.0.1:' +
+    portfinder(printer) +
+    '/api/access/users/grade' +
+    grade +
+    '/password';
 
   return urltobereturned;
 };
