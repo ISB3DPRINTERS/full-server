@@ -14,33 +14,9 @@
 
 import supabase from './supabase.mjs';
 import axios from 'axios';
-
-const numbergenerator = () => {
-  return Math.random().toString(36).slice(2);
-};
-
-const supabaseChanger = async (grade, newinfo) => {
-  let { data: info, error } = await supabase
-    .from('studentinfo')
-    .update({ key: newinfo })
-    .eq('grade', grade);
-  if (error) {
-    console.log('supabase error');
-    return 400;
-  } else {
-    return 200;
-  }
-};
-const portfinder = (printer) => {
-  return '5100';
-};
-const urlfinder = (grade, printer) => {
-  // eslint-disable-next-line prettier/prettier
-  var urltobereturned = "http://127.0.0.1:5100/api/access/users/grade7/password";
-
-  return urltobereturned;
-};
-
+import { numbergenerator } from './api/numbergenerator.js';
+import { urlfinder } from './api/urlfinder.js';
+import ( supabasechanger ) from './api/supabasechanger.js'
 const getPrinterKey = async (grade, printer) => {
   var printer = 1;
   var identifier = parseFloat(printer);
