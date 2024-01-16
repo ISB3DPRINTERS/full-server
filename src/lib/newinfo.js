@@ -18,6 +18,8 @@ import { numbergenerator } from './api/numbergenerator.js';
 import { urlfinder } from './api/urlfinder.js';
 import { supabasechanger } from './api/supabasechanger.js';
 import { getPrinterKey } from './api/getprinterkey.js';
+import next from 'next';
+
 
 const printerrequester = (grade, printer) => {
   var passwordtoupdate = { password: numbergenerator() };
