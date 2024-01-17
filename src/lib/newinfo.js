@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import supabase from './supabase.mjs';
+
 import axios from 'axios';
 import { numbergenerator } from './api/numbergenerator.mjs';
 import { urlfinder } from './api/urlfinder.mjs';
@@ -23,7 +24,7 @@ import next from 'next';
 const printerrequester = async (grade, printer) => {
   var passwordtoupdate = { password: numbergenerator() };
   const headers = {
-    'X-Api-Key': await getPrinterKey(grade, printer)
+    'X-Api-Key': await getPrinterKey(printer)
   };
 
   console.log(passwordtoupdate);
@@ -33,11 +34,11 @@ const printerrequester = async (grade, printer) => {
       headers
     })
     .then(async (response) => {
-      console.log('R E S P O N S E  S T A T US');
-      console.log('R E S P O N S E  S T A T US ');
-      console.log('R E S P O N S E  S T A T US ');
-      console.log('R E S P O N S E  S T A T US ');
-      console.log('R E S P O N S E  S T A T US ');
+      console.log('R E S P O N S E  S T A T U S');
+      console.log('R E S P O N S E  S T A T U S ');
+      console.log('R E S P O N S E  S T A T U S ');
+      console.log('R E S P O N S E  S T A T U S ');
+      console.log('R E S P O N S E  S T A T U S ');
       console.log(response.status);
       if (response.status === 200) {
         var suparesponse = await supabaseChanger(
@@ -53,9 +54,9 @@ const printerrequester = async (grade, printer) => {
 };
 
 const printerupdater = async (grade) => {
-  if ((await printerrequester(grade, 1)) == 200) {
+  if ((await printerrequester(grade, 4)) == 200) {
     console.log('printer1 updated correctly');
-  }
+  } 
   if ((await printerrequester(grade, 2)) == 200) {
     console.log('printer2 updated correctly');
   }
@@ -64,8 +65,6 @@ const printerupdater = async (grade) => {
   }
   if ((await printerrequester(grade, 4)) == 200) {
     console.log('printer4 updated correctly');
-  }
+  } 
 };
 export default printerupdater;
-
-printerupdater(6);
