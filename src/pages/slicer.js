@@ -28,7 +28,7 @@ export default function Slicer() {
         src="https://grid.space/kiri/"
         height="1000"
         width="1200"
-        frameborder="0"
+        frameBorder="0"
         align="center"
         allowFullScreen
         title="isb3dprinters slicer"

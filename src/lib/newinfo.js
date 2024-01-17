@@ -55,30 +55,30 @@ const printerrequester = (grade, printer) => {
     .catch((error) => console.error(error));
 };
 
-const printerupdater = async (grade, printer) => {
-  if ((await printerrequester(1)) == 200) {
+const printerupdater = async (grade) => {
+  if ((await printerrequester(grade, 1)) == 200) {
     console.log('printer1 updated correctly');
   } else {
     console.log('printer1 not updated correctly');
-    await printerrequester(1);
+    await printerrequester(grade, 1);
   }
-  if ((await printerrequester(2)) == 200) {
+  if ((await printerrequester(grade, 2)) == 200) {
     console.log('printer2 updated correctly');
   } else {
     console.log('printer2 not updated correctly');
-    await printerrequester(2);
+    await printerrequester(grade, 2);
   }
-  if ((await printerrequester(3)) == 200) {
+  if ((await printerrequester(grade, 3)) == 200) {
     console.log('printer3 updated correctly');
   } else {
     console.log('printer3 not updated correctly');
-    await printerrequester(3);
+    await printerrequester(grade, 3);
   }
-  if ((await printerrequester(4)) == 200) {
+  if ((await printerrequester(grade, 4)) == 200) {
     console.log('printer4 updated correctly');
   } else {
     console.log('printer4 not updated correctly');
-    await printerrequester(4);
+    await printerrequester(grade, 4);
   }
 };
 export default printerupdater;

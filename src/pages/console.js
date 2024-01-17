@@ -19,6 +19,7 @@ import { useRouter } from 'next/router';
 import supabase from '../lib/supabase.mjs';
 import Link from 'next/link';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export async function getServerSideProps() {
   const cost = await getinfo.getcostarray();
@@ -33,6 +34,7 @@ export async function getServerSideProps() {
 }
 
 export default function Dashboard({ keys, cost }) {
+  // Function component code here
   var [keyg6, keyg7, keyg8, keyg9, keyg10, keyg11, keyg12] = keys;
   var [costg6, costg7, costg8, costg9, costg10, costg11, costg12] = cost;
 
@@ -223,30 +225,28 @@ export default function Dashboard({ keys, cost }) {
               Your Initials
             </label>
             <input
-              className="inputField"
+              className="inputField bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               type="text"
               placeholder="Your Initials"
               value={initials}
               required={true}
               onChange={(e) => setInitials(e.target.value)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             />
           </div>
           <div className="mb-5">
             <label
-              for="text"
+              htmlFor="text"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Grade
             </label>
             <input
-              className="inputField"
               type="grade"
               placeholder="Grade: Only # or ALL"
               value={grade}
               required={true}
               onChange={(e) => setGrade(e.target.value)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="inputField bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             />
           </div>
           <button
@@ -261,3 +261,8 @@ export default function Dashboard({ keys, cost }) {
     </div>
   );
 }
+
+Dashboard.propTypes = {
+  keys: PropTypes.array.isRequired,
+  cost: PropTypes.array.isRequired
+};
