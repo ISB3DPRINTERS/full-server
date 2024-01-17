@@ -16,7 +16,7 @@ import supabase from './supabase.mjs';
 import axios from 'axios';
 import { numbergenerator } from './api/numbergenerator.js';
 import { urlfinder } from './api/urlfinder.js';
-import { supabasechanger } from './api/supabasechanger.js';
+import { supabaseChanger } from './api/supabasechanger.js';
 import { getPrinterKey } from './api/getprinterkey.js';
 import next from 'next';
 
