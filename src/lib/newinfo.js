@@ -19,10 +19,11 @@ import { numbergenerator } from './api/numbergenerator.mjs';
 import { urlfinder } from './api/urlfinder.mjs';
 import { supabaseChanger } from './api/supabasechanger.mjs';
 import { getPrinterKey } from './api/getprinterkey.mjs';
+import { getgradekey } from './api/getgradekey.mjs';
 import next from 'next';
 
 const printerrequester = async (grade, printer) => {
-  var passwordtoupdate = { password: numbergenerator() };
+  var passwordtoupdate = getgradekey(grade);
   const headers = {
     'X-Api-Key': await getPrinterKey(printer)
   };
@@ -54,17 +55,20 @@ const printerrequester = async (grade, printer) => {
 };
 
 const printerupdater = async (grade) => {
-  if ((await printerrequester(grade, 4)) == 200) {
-    console.log('printer1 updated correctly');
-  }
-  if ((await printerrequester(grade, 2)) == 200) {
-    console.log('printer2 updated correctly');
-  }
-  if ((await printerrequester(grade, 3)) == 200) {
-    console.log('printer3 updated correctly');
-  }
-  if ((await printerrequester(grade, 4)) == 200) {
-    console.log('printer4 updated correctly');
+  var suparesponse = await supabaseChanger(grade, numbergenerator());
+  if (suparesponse === 200) {
+    if ((await printerrequester(grade, 4)) == 200) {
+      console.log('printer1 updated correctly');
+    }
+    if ((await printerrequester(grade, 2)) == 200) {
+      console.log('printer2 updated correctly');
+    }
+    if ((await printerrequester(grade, 3)) == 200) {
+      console.log('printer3 updated correctly');
+    }
+    if ((await printerrequester(grade, 4)) == 200) {
+      console.log('printer4 updated correctly');
+    }
   }
 };
 export default printerupdater;
