@@ -54,12 +54,15 @@ const printerupdater = async (grade) => {
     if ((await printerrequester(grade, 4)) == 200) {
       console.log('printer1 updated correctly');
     }
+    await setTimeout(2000);
     if ((await printerrequester(grade, 2)) == 200) {
       console.log('printer2 updated correctly');
     }
+    await setTimeout(2000);
     if ((await printerrequester(grade, 3)) == 200) {
       console.log('printer3 updated correctly');
     }
+    await setTimeout(2000);
     if ((await printerrequester(grade, 4)) == 200) {
       console.log('printer4 updated correctly');
     }
