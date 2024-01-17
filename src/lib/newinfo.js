@@ -20,7 +20,6 @@ import { supabasechanger } from './api/supabasechanger.js';
 import { getPrinterKey } from './api/getprinterkey.js';
 import next from 'next';
 
-
 const printerrequester = (grade, printer) => {
   var passwordtoupdate = { password: numbergenerator() };
   const headers = {

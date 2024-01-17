@@ -16,7 +16,6 @@
 const nextConfig = {
   images: {
     domains: ['image.tmdb.org']
-  },
-  basepath: ''
+  }
 };
 module.exports = nextConfig;
