@@ -53,7 +53,7 @@ const printerupdater = async (grade) => {
   if (suparesponse === 200) {
     if ((await printerrequester(grade, 4)) == 200) {
       console.log('printer1 updated correctly');
-    }
+    } /*
     if ((await printerrequester(grade, 2)) == 200) {
       console.log('printer2 updated correctly');
     }
@@ -63,6 +63,6 @@ const printerupdater = async (grade) => {
     if ((await printerrequester(grade, 4)) == 200) {
       console.log('printer4 updated correctly');
     }
-  }
+  } */
 };
 export default printerupdater;
