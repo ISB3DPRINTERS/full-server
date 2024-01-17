@@ -13,7 +13,6 @@
 // limitations under the License.
 
 import supabase from './supabase.mjs';
-
 import axios from 'axios';
 import { numbergenerator } from './api/numbergenerator.mjs';
 import { urlfinder } from './api/urlfinder.mjs';
