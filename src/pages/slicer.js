@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import React from 'react';
+
 import Link from 'next/link';
 export default function Slicer() {
   return (
