@@ -13,17 +13,18 @@
 // limitations under the License.
 
 import supabase from './supabase.mjs';
+
 import axios from 'axios';
-import { numbergenerator } from './api/numbergenerator.js';
-import { urlfinder } from './api/urlfinder.js';
-import { supabaseChanger } from './api/supabasechanger.js';
-import { getPrinterKey } from './api/getprinterkey.js';
+import { numbergenerator } from './api/numbergenerator.mjs';
+import { urlfinder } from './api/urlfinder.mjs';
+import { supabaseChanger } from './api/supabasechanger.mjs';
+import { getPrinterKey } from './api/getprinterkey.mjs';
 import next from 'next';
 
-const printerrequester = (grade, printer) => {
+const printerrequester = async (grade, printer) => {
   var passwordtoupdate = { password: numbergenerator() };
   const headers = {
-    'X-Api-Key': getPrinterKey(grade, printer)
+    'X-Api-Key': await getPrinterKey(grade, printer)
   };
 
   console.log(passwordtoupdate);
@@ -33,22 +34,19 @@ const printerrequester = (grade, printer) => {
       headers
     })
     .then(async (response) => {
-      if (response.status == 200) {
-        var suparesponse = await supabasechanger(grade, passwordtoupdate);
-        if (suparesponse == 200) {
+      console.log('R E S P O N S E  S T A T US');
+      console.log('R E S P O N S E  S T A T US ');
+      console.log('R E S P O N S E  S T A T US ');
+      console.log('R E S P O N S E  S T A T US ');
+      console.log('R E S P O N S E  S T A T US ');
+      console.log(response.status);
+      if (response.status === 200) {
+        var suparesponse = await supabaseChanger(
+          grade,
+          passwordtoupdate.password
+        );
+        if (suparesponse === 200) {
           return 200;
-        } else {
-          var suparesponse1 = await supabasechanger(grade, passwordtoupdate);
-          if (suparesponse1 == 200) {
-            return 200;
-          } else {
-            var suparesponse2 = await supabasechanger(grade, passwordtoupdate);
-            if (suparesponse2 == 200) {
-              return 200;
-            } else {
-              return 400;
-            }
-          }
         }
       }
     })
@@ -58,27 +56,17 @@ const printerrequester = (grade, printer) => {
 const printerupdater = async (grade) => {
   if ((await printerrequester(grade, 1)) == 200) {
     console.log('printer1 updated correctly');
-  } else {
-    console.log('printer1 not updated correctly');
-    await printerrequester(grade, 1);
   }
   if ((await printerrequester(grade, 2)) == 200) {
     console.log('printer2 updated correctly');
-  } else {
-    console.log('printer2 not updated correctly');
-    await printerrequester(grade, 2);
   }
   if ((await printerrequester(grade, 3)) == 200) {
     console.log('printer3 updated correctly');
-  } else {
-    console.log('printer3 not updated correctly');
-    await printerrequester(grade, 3);
   }
   if ((await printerrequester(grade, 4)) == 200) {
     console.log('printer4 updated correctly');
-  } else {
-    console.log('printer4 not updated correctly');
-    await printerrequester(grade, 4);
   }
 };
 export default printerupdater;
+
+printerupdater(6);
