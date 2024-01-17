@@ -23,7 +23,7 @@ import { getgradekey } from './api/getgradekey.mjs';
 import next from 'next';
 
 const printerrequester = async (grade, printer) => {
-  var passwordtoupdate = await getgradekey(grade);
+  var passwordtoupdate = { password: await getgradekey(grade) };
   const headers = {
     'X-Api-Key': await getPrinterKey(printer)
   };
@@ -42,13 +42,7 @@ const printerrequester = async (grade, printer) => {
       console.log('R E S P O N S E  S T A T U S ');
       console.log(response.status);
       if (response.status === 200) {
-        var suparesponse = await supabaseChanger(
-          grade,
-          passwordtoupdate.password
-        );
-        if (suparesponse === 200) {
-          return 200;
-        }
+        return 200;
       }
     })
     .catch((error) => console.error(error));
