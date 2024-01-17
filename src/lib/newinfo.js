@@ -23,7 +23,7 @@ import { getgradekey } from './api/getgradekey.mjs';
 import next from 'next';
 
 const printerrequester = async (grade, printer) => {
-  var passwordtoupdate = getgradekey(grade);
+  var passwordtoupdate = await getgradekey(grade);
   const headers = {
     'X-Api-Key': await getPrinterKey(printer)
   };
