@@ -59,7 +59,7 @@ export default function Dashboard({ keys, cost }) {
   const submitData = async (toreset) => {
     console.log(toreset);
     try {
-      const body = { grade: toreset };
+      var body = { grade: toreset };
       await fetch('/api/newinfo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
