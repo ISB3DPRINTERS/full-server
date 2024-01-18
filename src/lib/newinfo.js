@@ -34,11 +34,11 @@ const printerrequester = async (grade, printer) => {
       headers
     })
     .then(async (response) => {
-      console.log('R E S P O N S E  S T A T US');
-      console.log('R E S P O N S E  S T A T US ');
-      console.log('R E S P O N S E  S T A T US ');
-      console.log('R E S P O N S E  S T A T US ');
-      console.log('R E S P O N S E  S T A T US ');
+      console.log('R E S P O N S E  S T A T U S ');
+      console.log('R E S P O N S E  S T A T U S ');
+      console.log('R E S P O N S E  S T A T U S ');
+      console.log('R E S P O N S E  S T A T U S ');
+      console.log('R E S P O N S E  S T A T U S ');
       console.log(response.status);
       if (response.status === 200) {
         return 200;
