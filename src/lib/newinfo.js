@@ -62,7 +62,7 @@ const printerupdater = async (grade) => {
   if ((await printerrequester(grade, 4)) == 200) {
     console.log('printer4 updated correctly');
   }
-  return 200
+  return 200;
 };
 export default printerupdater;
 

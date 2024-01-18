@@ -11,15 +11,15 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-import supabase from '../supabase.mjs'
+import supabase from '../supabase.mjs';
 export const getkey = async (grade) => {
-    let { data: getkey, error } = await supabase
-      .from('studentinfo')
-      .select()
-      .eq('grade', grade)
-      .single();
-    if (error) {
-      console.log('supabase error');
-    }
-    return await getkey.key;
-  };
+  let { data: getkey, error } = await supabase
+    .from('studentinfo')
+    .select()
+    .eq('grade', grade)
+    .single();
+  if (error) {
+    console.log('supabase error');
+  }
+  return await getkey.key;
+};

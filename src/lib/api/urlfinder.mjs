@@ -39,7 +39,7 @@ export const urlfinder = (grade, printer) => {
   console.log('URL FINDER GOT PRINTER ' + printer + ' AND GRADE ' + grade);
   // eslint-disable-next-line prettier/prettier
   var urltobereturned =
-    'http://192.168.50.119:' +
+    'http://127.0.0.1:' +
     portfinder(printer) +
     '/api/access/users/grade' +
     grade +
