@@ -11,20 +11,26 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-import { createClient } from '@supabase/supabase-js';
-const supabase = createClient(
-  'https://servksydavsonantnpox.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNlcnZrc3lkYXZzb25hbnRucG94Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTM4NzQ2NjYsImV4cCI6MjAwOTQ1MDY2Nn0.nzbHw3XU4qVouLYJRW0yuVNt89qNESX4tV8m606dd_A'
-);
 
-export const getgradekey = async (grade) => {
-  let { data: getkey, error } = await supabase
-    .from('studentinfo')
-    .select()
-    .eq('grade', grade)
-    .single();
-  if (error) {
-    console.log('supabase error');
+// DEPRECATED
+
+import { writeFile } from 'fs/promises';
+import { NextRequest, NextResponse } from 'next/server';
+
+export async function POST(request) {
+  const data = await request.formData();
+  const file = data.get('file');
+
+  if (!file) {
+    return NextResponse.json({ success });
   }
-  return await getkey.key;
-};
+
+  const bytes = await file.arrayBuffer();
+  const buffer = Buffer.from(bytes);
+
+  const path = `/tmp/${file.name}`;
+  await writeFile(path, buffer);
+  console.log(`open ${path} to see the uploaded file`);
+
+  return NextResponse.json({ success });
+}

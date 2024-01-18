@@ -97,20 +97,20 @@ export default function Home() {
           </span>
           <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
             <li>
-              <Link href="/about" className="hover:underline me-4 md:me-6">
+              <a href="/about" className="hover:underline me-4 md:me-6">
                 {' '}
                 About
-              </Link>
+              </a>
             </li>
             <li>
-              <Link href="/privacypolicy" className="hover:underline me-4 md:me-6">
+              <a href="/privacypolicy" className="hover:underline me-4 md:me-6">
                 Privacy Policy
-              </Link>
+              </a>
             </li>
             <li>
-              <Link href="/license" className="hover:underline me-4 md:me-6">
+              <a href="/license" className="hover:underline me-4 md:me-6">
                 License
-              </Link>
+              </a>
             </li>
             <li>
               <a

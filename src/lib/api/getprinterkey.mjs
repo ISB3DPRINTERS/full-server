@@ -11,7 +11,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 import { createClient } from '@supabase/supabase-js';
 import { printers } from 'prettier-plugin-tailwindcss';
 const supabase = createClient(
@@ -21,6 +20,7 @@ const supabase = createClient(
 
 export const getPrinterKey = async (printer) => {
   console.log('GETPRINTER KEY GOT ' + printer);
+  var printer = 1;
   var identifier = parseFloat(printer);
   let { data: getkey, error } = await supabase
     .from('printerinfo')

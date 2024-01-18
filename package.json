@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": false,
   "license": "Apache-2.0",
-  "type": "module",
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
