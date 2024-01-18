@@ -6,7 +6,8 @@
   "extends": [
     "plugin:prettier/recommended",
     "plugin:react/recommended",
-    "prettier"
+    "prettier",
+    "next/core-web-vitals"
   ],
   "overrides": [],
   "parserOptions": {
@@ -16,5 +17,10 @@
   "plugins": ["react", "prettier"],
   "rules": {
     "prettier/prettier": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
