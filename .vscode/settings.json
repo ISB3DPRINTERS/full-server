@@ -20,6 +20,7 @@
     "getkey",
     "getkeyarray",
     "getprinterkey",
+    "getprinternumber",
     "keyarray",
     "keyarraytoreturn",
     "keychanger",

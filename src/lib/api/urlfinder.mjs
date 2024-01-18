@@ -17,7 +17,7 @@
 // TESTED WORKS
 const portfinder = (printer) => {
   console.log('PORTFINDER GOT ' + printer);
-  console.log('portfinder returing printer ' + printer);
+  console.log('portfinder retying printer ' + printer);
   if (printer == 1) {
     return '5100';
   }

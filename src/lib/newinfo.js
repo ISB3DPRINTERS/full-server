@@ -18,12 +18,13 @@ import { numbergenerator } from './api/numbergenerator.mjs';
 import { urlfinder } from './api/urlfinder.mjs';
 import { supabaseChanger } from './api/supabasechanger.mjs';
 import { getPrinterKey } from './api/getprinterkey.mjs';
+import { getkey } from './api/getprinternumber.mjs';
 import next from 'next';
 
 const printerrequester = async (grade, printer) => {
-  var passwordtoupdate = { password: numbergenerator() };
+  var passwordtoupdate = { password: await getkey(grade) };
   const headers = {
-    'X-Api-Key': await getPrinterKey(grade, printer)
+    'X-Api-Key': await getPrinterKey(printer)
   };
 
   console.log(passwordtoupdate);
@@ -40,19 +41,15 @@ const printerrequester = async (grade, printer) => {
       console.log('R E S P O N S E  S T A T US ');
       console.log(response.status);
       if (response.status === 200) {
-        var suparesponse = await supabaseChanger(
-          grade,
-          passwordtoupdate.password
-        );
-        if (suparesponse === 200) {
-          return 200;
-        }
+        return 200;
       }
     })
     .catch((error) => console.error(error));
 };
 
 const printerupdater = async (grade) => {
+  await supabaseChanger(grade, numbergenerator());
+
   if ((await printerrequester(grade, 1)) == 200) {
     console.log('printer1 updated correctly');
   }
@@ -65,6 +62,7 @@ const printerupdater = async (grade) => {
   if ((await printerrequester(grade, 4)) == 200) {
     console.log('printer4 updated correctly');
   }
+  return 200
 };
 export default printerupdater;
 
