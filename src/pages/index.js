@@ -55,7 +55,7 @@ export default function Home() {
               >
                 Teachers Console:
               </Link>
-            </span>{' '}
+            </span>
             Go to the Teachers Console <br />
           </div>
         </div>
@@ -63,7 +63,7 @@ export default function Home() {
       <div className="flex justify-center">
         <Link href="/help">
           <div>
-            {' '}
+     
             <a> Help </a>
             <svg
               className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
@@ -86,28 +86,27 @@ export default function Home() {
       <footer className="fixed bottom-0 bg-white rounded-lg shadow m-4 dark:bg-gray-800">
         <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2023{' '}
+            © 2023
             <Link href="https://github.com/ravinder-Olivier">
-              {' '}
-              <a>Ravinder Olivier Singh Dadiala</a>{' '}
+              <a>Ravinder Olivier Singh Dadiala</a>
             </Link>
             . All Rights Reserved.&nbsp;
           </span>
           <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
             <Link href="/about">
-              {' '}
-              <a>About</a>{' '}
+             
+              <a>About</a>
             </Link>
             <Link href="/privacypolicy">
-              {' '}
-              <a>Privacy Policy</a>{' '}
+            
+              <a>Privacy Policy</a>
             </Link>
             <Link href="/license">
               <a>License</a>
             </Link>
             <Link href="mailto:ravinder-Olivier@outlook.com">
-              {' '}
-              <a>Contact</a>{' '}
+             
+              <a>Contact</a>
             </Link>
           </ul>
         </div>
