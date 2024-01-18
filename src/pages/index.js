@@ -87,45 +87,16 @@ export default function Home() {
         <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2023{' '}
-            <li>
-              {' '}
-              <Link
-                href="https://github.com/ravinder-Olivier"
-                className="hover:underline"
-              >
-                <>Ravinder Olivier Singh Dadiala</>
-              </Link>{' '}
-            </li>
+            <Link hred='https://github.com/ravinder-Olivier'>Ravinder Olivier Singh Dadiala</Link>
             . All Rights Reserved.&nbsp;
           </span>
           <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-            <li>
-              <Link href="/about" className="hover:underline me-4 md:me-6">
-                {' '}
-                <>About</>
+            <Link href='/about'><a>About</a></Link>
+            <Link href='/privacypolicy'><a>Privacy Policy</a></Link>
+              <Link href="/license">
+                <a>License</a>
               </Link>
-            </li>
-            <li>
-              <Link
-                href="/privacypolicy"
-                className="hover:underline me-4 md:me-6"
-              >
-                <>Privacy Policy</>
-              </Link>
-            </li>
-            <li>
-              <Link href="/license" className="hover:underline me-4 md:me-6">
-                <>License</>
-              </Link>
-            </li>
-            <li>
-              <a
-                href="mailto:ravinder-Olivier@outlook.com"
-                className="hover:underline"
-              >
-                <>Contact</>
-              </a>
-            </li>
+              <Link href='mailto:ravinder-Olivier@outlook.com'><a>Contact</a></Link>
           </ul>
         </div>
       </footer>
