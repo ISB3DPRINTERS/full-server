@@ -32,18 +32,25 @@ export default async function handler(req, res) {
 
   if (tochange.grade === 6) {
     await keychanger(6);
+    res.status(200).send({ message: 'Grade 6 Resetting' });
   } else if (tochange === 7) {
     await keychanger(7);
+    res.status(200).send({ message: 'Grade 7 Resetting' });
   } else if (tochange === 8) {
     await keychanger(8);
+    res.status(200).send({ message: 'Grade 8 Resetting' });
   } else if (tochange === 9) {
     await keychanger(9);
+    res.status(200).send({ message: 'Grade 9 Resetting' });
   } else if (tochange === 10) {
     await keychanger(10);
+    res.status(200).send({ message: 'Grade 10 Resetting' });
   } else if (tochange === 11) {
     await keychanger(11);
+    res.status(200).send({ message: 'Grade 11 Resetting' });
   } else if (tochange === 12) {
     await keychanger(12);
+    res.status(200).send({ message: 'Grade 12 Resetting' });
   } else if (tochange === 13) {
     await keychanger(6);
     await keychanger(7);
@@ -52,6 +59,7 @@ export default async function handler(req, res) {
     await keychanger(10);
     await keychanger(11);
     await keychanger(12);
+    res.status(200).send({ message: 'Grade ALL Resetting' });
   } else {
     res.status(400).send({ message: 'Invalid grade' });
     return;
