@@ -19,6 +19,7 @@
     "getinforeturn",
     "getkey",
     "getkeyarray",
+    "GETPRINTER",
     "getprinterkey",
     "getprinternumber",
     "keyarray",

@@ -11,20 +11,24 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-import { createClient } from '@supabase/supabase-js';
-import { printers } from 'prettier-plugin-tailwindcss';
-import supabase from '../supabase.mjs';
 
-export const getPrinterKey = async (printer) => {
-  console.log('GETPRINTER KEY GOT ' + printer);
-  var identifier = parseFloat(printer);
-  let { data: getkey, error } = await supabase
-    .from('printerinfo')
-    .select()
-    .eq('id', identifier)
-    .single();
-  if (error) {
-    console.log('supabase error');
+import cron from 'node-cron';
+import printerupdater from './newinfo.js';
+
+cron.schedule(
+  '0 0 * * *',
+  async () => {
+    console.log('NODE CRON RUNNING');
+    await printerupdater(6);
+    await printerupdater(7);
+    await printerupdater(8);
+    await printerupdater(9);
+    await printerupdater(10);
+    await printerupdater(11);
+    await printerupdater(12);
+  },
+  {
+    scheduled: true,
+    timezone: 'America/Los_Angeles'
   }
-  return getkey.apikey;
-};
+);

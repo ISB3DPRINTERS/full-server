@@ -15,7 +15,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['image.tmdb.org']
+    domains: ['google.com']
   }
 };
 module.exports = nextConfig;
