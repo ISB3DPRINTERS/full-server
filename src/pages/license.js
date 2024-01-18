@@ -13,6 +13,8 @@
 // limitations under the License.
 
 import React from 'react';
+import Link from 'next/link';
+
 export default function license() {
   return (
     <div>
@@ -20,12 +22,11 @@ export default function license() {
       <p>
         The ISB3DPRINTERS Project is licensed under the Apache License 2.0. You
         can find the license{' '}
-        <a
-          href="/licensetext"
-          className="hover:underline text-gray-500 dark:text-blue-400"
-        >
-          here
-        </a>
+        <Link href="/licensetext">
+          <a className="hover:underline text-gray-500 dark:text-blue-400">
+            here
+          </a>
+        </Link>
       </p>
       <h1 className="text-4xl font-extrabold dark:text-black">NOTICE</h1>
       <p>
