@@ -83,18 +83,6 @@ export default function AuthForm() {
               {isLogin ? 'Login' : 'Sign Up'}
             </button>
           </form>
-          <button
-            onClick={() => setIsLogin(!isLogin)}
-            className="text-gray-700"
-            style={{
-              textDecoration: 'underline',
-              fontSize: '12px'
-            }}
-          >
-            {isLogin
-              ? 'Switch to Sign Up (WILL BE REMOVED IN FUTURE)'
-              : 'Switch to Login'}
-          </button>
         </div>
       </div>
     </div>
