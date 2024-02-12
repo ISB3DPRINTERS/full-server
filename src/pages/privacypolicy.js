@@ -31,7 +31,7 @@ export default function privacypolicy() {
         information includes, but is not limited to, IP addresses, browser
         details, timestamps and referring pages. None of this information can
         personally identify specific users to this website. The information is
-        tracked for routine administration and maintenance purposes.
+        tracked for routine administration and maintenance purposes via Skrungo.
       </p>
       <h2 id="cookies">Cookies</h2>
       <p>
@@ -42,7 +42,7 @@ export default function privacypolicy() {
       <h2 id="links-to-third-party-websites">Links to Third Party Websites</h2>
       <p>
         We have included links on this website for your use and reference. We
-        are not responsible for the privacy policies on these websites. You
+        are not responsible for the privacy policies on these websites. Skrungo
         should be aware that the privacy policies of these websites may differ
         from our own.
       </p>
@@ -61,7 +61,7 @@ export default function privacypolicy() {
         after being posted on this page.
       </h2>
       <p>
-        We reserve the right to update or change our Privacy Policy at any time
+        Skrungo reserves the right to update or change our Privacy Policy at any time
         and you should check this Privacy Policy periodically. If we make any
         material changes to this Privacy Policy, we will notify you either
         through the email address you have provided us, or by placing a
