@@ -61,9 +61,9 @@ export default function privacypolicy() {
         after being posted on this page.
       </h2>
       <p>
-        Skrungo reserves the right to update or change our Privacy Policy at any time
-        and you should check this Privacy Policy periodically. If we make any
-        material changes to this Privacy Policy, we will notify you either
+        Skrungo reserves the right to update or change our Privacy Policy at any
+        time and you should check this Privacy Policy periodically. If we make
+        any material changes to this Privacy Policy, we will notify you either
         through the email address you have provided us, or by placing a
         prominent notice on our website.
       </p>

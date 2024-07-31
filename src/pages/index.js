@@ -63,7 +63,6 @@ export default function Home() {
       <div className="flex justify-center">
         <Link href="/help">
           <div>
-     
             <a> Help </a>
             <svg
               className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
@@ -94,18 +93,15 @@ export default function Home() {
           </span>
           <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
             <Link href="/about">
-             
               <a>About</a>
             </Link>
             <Link href="/privacypolicy">
-            
               <a>Privacy Policy</a>
             </Link>
             <Link href="/license">
               <a>License</a>
             </Link>
             <Link href="mailto:ravinder-Olivier@outlook.com">
-             
               <a>Contact</a>
             </Link>
           </ul>
