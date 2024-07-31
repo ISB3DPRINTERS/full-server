@@ -64,3 +64,5 @@
 
 - Install the dependencies
   - ``pnpm install``
+
+## Setup Docker
