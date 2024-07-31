@@ -66,3 +66,51 @@
   - ``pnpm install``
 
 ## Setup Docker
+
+- Open terminal
+- Connect printers via USB, make sure they are on
+- Create the USB Rules
+  - The printers need to only have access to their specified printer
+  - This is done with Udev rules
+    - Follow this guide's STEP TWO ONLY
+      - [https://www.instructables.com/OctoPrint-for-Multiple-Printers-How-to-It-Working-/](https://www.instructables.com/OctoPrint-for-Multiple-Printers-How-to-It-Working-/)
+- Create the volumes
+  - ``docker volume create ender1``
+  - ``docker volume create ender2``
+  - ``docker volume create ender3``
+  - ``docker volume create ender4``
+    - Start the Octoprint instances
+      - ```Shell 
+        -p 5100:80   \
+        -v ender1:/octoprint \
+        --device /dev/ttyMINI1:/dev/ttyACM0  \
+        -dit --restart unless-stopped \
+        octoprint/octoprint
+        ```
+      - ```Shell 
+        -p 5200:80   \
+        -v ender2:/octoprint \
+        --device /dev/ttyMINI1:/dev/ttyACM1  \
+        -dit --restart unless-stopped \
+        octoprint/octoprint
+        ```
+      - ```Shell 
+        -p 5300:80   \
+        -v ender3:/octoprint \
+        --device /dev/ttyMINI1:/dev/ttyACM2  \
+        -dit --restart unless-stopped \
+        octoprint/octoprint
+        ```
+      - ```Shell 
+        -p 5400:80   \
+        -v ender4:/octoprint \
+        --device /dev/ttyMINI1:/dev/ttyACM3  \
+        -dit --restart unless-stopped \
+        octoprint/octoprint
+        ```
+  - Unplug all printers and restart computer
+  - Plug first printer in then run ``docker start ender1``
+  - Plug second printer in then run ``docker start ender2``
+  - Plug third printer in then run ``docker start ender3``
+  - Plug fourth printer in then run ``docker start ender4``
+  - Now the printer1 website will interact with the first printer plugged in, etc. Label your printers for ease of use.
